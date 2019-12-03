@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+
+<channel>
+<title>Photos</title>
+<link>http://localhost:8000/</link>
+<description>Grow with Technology</description>
+
+<item>
+<title>Little India</title>
+<link>http://localhost:8000/photos/little-india/</link>
+<description>
+<![CDATA[
+<p>
+Little india streets at a night. Shoot with sony alpha 6000 16-50mm.&nbsp;<a href="http://localhost:8000/photos/little-india/">...</a>
+</p>
+<p><a href="http://localhost:8000/photos/little-india/">More</a></p>
+]]>
+</description>
+<pubDate>Mon, 02 Dec 2019 00:00:00 +0000</pubDate>
+</item>
+
+
+</channel>
+</rss>
