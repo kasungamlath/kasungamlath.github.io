@@ -24,7 +24,7 @@
 <main>
 <article>
 <h1><a href="/blog/TrainBuddy-Loaction-Tracking/">Train Buddy v2 (with Location Tracking).</a></h1>
-<p class="meta">Published on 2015-08-23 by <b>Kasun</b></p>
+<p class="meta">Published on 2015-08-23 </p>
 <p>Just before the end of semester vacation I released a beta of train buddy with location tracking service. Once a user started it through the train map screen it'll access the location data of the device and will post them to the back-end once every predefined time interval.</p>
 <p>For now it only posts latitude, longitude and user set destination code to the back-end. So the data is anonymous. Nothing is posted to link the location with the one who is reporting it. Also the data is not persistent in the back-end. While the service is running the same data record will be updated per user. And when the service is stopped that record will be deleted. So the data isn't historical and at the given time only the real time data is kept in back-end. Users can get these data from the train map screen. It will display as one marker per one location reported with the destination code as the title.</p>
 <div align="center"><img src="{{ site.baseurl }}/assets/location_tracking.png" style="width: 400px;"></div></br>
