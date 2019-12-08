@@ -4,8 +4,21 @@
 <channel>
 <title>Blog</title>
 <link>http://localhost:8000/</link>
-<description>Grow with Technology</description>
+<description>Kasun Gamlath Personl website</description>
 
+<item>
+<title>How to make site like this (active)</title>
+<link>http://localhost:8000/blog/How-to-build-a-site-like-this/</link>
+<description>
+<![CDATA[
+<p>
+After using Jekyll for some time(about 4 years) and writing occasional posts recently I decided to try something new. The situation with static site generators&nbsp;<a href="http://localhost:8000/blog/How-to-build-a-site-like-this/">...</a>
+</p>
+<p><a href="http://localhost:8000/blog/How-to-build-a-site-like-this/">More</a></p>
+]]>
+</description>
+<pubDate>Mon, 09 Dec 2019 00:00:00 +0000</pubDate>
+</item>
 <item>
 <title>Train Buddy - Beginning of a new era</title>
 <link>http://localhost:8000/blog/Trainbuddy(TrainMap-alpha)/</link>
