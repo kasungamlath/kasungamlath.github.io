@@ -148,6 +148,6 @@ img {
 	margin-right: auto;
 }
 
-img[alt=photo] {
+img[alt=camera-photo] {
 	max-width :100%
 }
