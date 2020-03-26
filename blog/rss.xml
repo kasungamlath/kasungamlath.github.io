@@ -7,6 +7,32 @@
 <description>kasun gamlath personal site</description>
 
 <item>
+<title>On Automating a Lux Meter Reading</title>
+<link>http://localhost:8000/blog/On-Automating-a-Lux-Meter-Reading/</link>
+<description>
+<![CDATA[
+<p>
+A requirement came up for a project I've been working on recently to continuosly collect lux values+images on certain surfaces. Since the data collection needed&nbsp;<a href="http://localhost:8000/blog/On-Automating-a-Lux-Meter-Reading/">...</a>
+</p>
+<p><a href="http://localhost:8000/blog/On-Automating-a-Lux-Meter-Reading/">Read More</a></p>
+]]>
+</description>
+<pubDate>Wed, 25 Mar 2020 00:00:00 +0000</pubDate>
+</item>
+<item>
+<title>Detecting luminance level of a room using CCTV camera feed</title>
+<link>http://localhost:8000/blog/Detecting-luminance-level-of-a-room-using-CCTV-camera-feed/</link>
+<description>
+<![CDATA[
+<p>
+NOTE :Work in Progress Recently I started working on a new research project. Goal of this project is to find a relationship between luminance value&nbsp;<a href="http://localhost:8000/blog/Detecting-luminance-level-of-a-room-using-CCTV-camera-feed/">...</a>
+</p>
+<p><a href="http://localhost:8000/blog/Detecting-luminance-level-of-a-room-using-CCTV-camera-feed/">Read More</a></p>
+]]>
+</description>
+<pubDate>Wed, 25 Mar 2020 00:00:00 +0000</pubDate>
+</item>
+<item>
 <title>How To Make Site Like This</title>
 <link>http://localhost:8000/blog/How-To-Make-Site-Like-This/</link>
 <description>
@@ -21,13 +47,13 @@ After using Jekyll for some time(about 4 years) and writing occasional posts rec
 </item>
 <item>
 <title>Trainbuddy relaunched</title>
-<link>http://localhost:8000/blog/Trainbuddy relaunched/</link>
+<link>http://localhost:8000/blog/Trainbuddy-relaunched/</link>
 <description>
 <![CDATA[
 <p>
-I started working on train buddy app when I was 3rd year undergraduate. I first released it somewhere in 2015 and did a blog post.&nbsp;<a href="http://localhost:8000/blog/Trainbuddy relaunched/">...</a>
+I started working on train buddy app when I was 3rd year undergraduate. I first released it somewhere in 2015 and did a blog post.&nbsp;<a href="http://localhost:8000/blog/Trainbuddy-relaunched/">...</a>
 </p>
-<p><a href="http://localhost:8000/blog/Trainbuddy relaunched/">Read More</a></p>
+<p><a href="http://localhost:8000/blog/Trainbuddy-relaunched/">Read More</a></p>
 ]]>
 </description>
 <pubDate>Sat, 14 Jul 2018 00:00:00 +0000</pubDate>

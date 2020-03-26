@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>On Automating a Lux Meter Reading - Kasun Gamlath</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+
+<body id="On-Automating-a-Lux-Meter-Reading">
+
+<nav>
+<section>
+    <span class="home">
+        <a href="/">Home</a>
+    </span>
+    <span class="links">
+        <a href="/blog/">Blog</a>
+        <a href="/photos/">Photos</a>
+    </span>
+</section>
+</nav>
+
+<main>
+<article>
+<h1><a href="/blog/On-Automating-a-Lux-Meter-Reading/">On Automating a Lux Meter Reading</a></h1>
+<p class="meta">Published on 2020-03-25</p>
+<p>A requirement came up for a project I've been working on recently to continuosly collect lux values+images on certain surfaces.
+Since the data collection needed to be done for a considerable time period manual collection was not feasible.
+To automate the collection of lux values, bellow ideas were considered.</p>
+<ol>
+<li>
+<p>Use the mobile phone lux meters, do a mapping from those numbers to actual lux meter numbers.
+<em>Requires writing/ finding app to collect the lux values periodically.
+Don't know about the accuracy of lux meter in mobile phone.
+Need to align that values to pictures from ip cam.</em></p>
+</li>
+<li>
+<p>Place the lux meters so the ip cam see the display clearly, and read them from image using ocr.
+<em>This is the ideal since no need to maintain an alignment form ip cam image to seperate lux reading.
+Unfortunately the ip cam resolution is not enough to read the lux meter display clearly.
+Even ip cam is zoomed in it's not reliable(and if you zoom in you loose scenario data).</em></p>
+</li>
+<li>
+<p>Setup a mobile phone near to lux meter so it can get a picture. and do ocr on it.
+<em>Still need to align 2 images( ip cam and moble phone cam).
+Need a mechanism to set up the mobile phone next to lux meter.
+Anyway among the optons we have this is the most feasible so far.</em></p>
+</li>
+<li>
+<p>Buy lux meters with transmitting feature.</p>
+</li>
+</ol>
+<p>After doing a feasibilty study decided to go with option 3.</p>
+<p>First placed the mobile device slightly above the lux meter display.
+Then installed an ip-cam app in the mobile device to make the data collection easier.
+To sync up the images(in time dimenssion) used the time stamps stamped by ip cam and mobile app.
+Synced up the time in ip-cam and mobile device to same time.
+Then using an ocr script read the ocr value from image and anotated the ip-cam image.
+To read the images first tried tesseract.
+But found out it's more suitable to read the printed stuff(our lux meter has seven segment display digits).
+Then we found a way which utilized a mechanism based on contrasting area coordinates. after few tweakings it gave us right readings.</p>
+<h3>Results</h3>
+<p>input image
+<img src="/assets/mobile_ip_cam_lux_reading.jpg" alt="" />
+lux reading
+<img src="/assets/annotated_lux_reading.png" alt="" /></p>
+<p>Unfortunately this setup in neither portable nor scalable.</p>
+
+</article>
+
+</main>
+
+
+</body>
+</html>
