@@ -7,6 +7,45 @@
 <description>kasun gamlath personal site</description>
 
 <item>
+<title>New Phone</title>
+<link>http://localhost:8000/blog/New-Phone/</link>
+<description>
+<![CDATA[
+<p>
+After the death of my previous phone I ordered a new phone. Due to frustration on android update system(IMO my last phone died because of&nbsp;<a href="http://localhost:8000/blog/New-Phone/">...</a>
+</p>
+<p><a href="http://localhost:8000/blog/New-Phone/">Read More</a></p>
+]]>
+</description>
+<pubDate>Fri, 22 May 2020 00:00:00 +0000</pubDate>
+</item>
+<item>
+<title>My First Contribution to Firefox</title>
+<link>http://localhost:8000/blog/My-First-Contribution-to-Firefox/</link>
+<description>
+<![CDATA[
+<p>
+My fist code contribution to Mozilla Firefox got accepted. It's just fixing a code analysis bug.(and fixing another code analysis warning which caused by the&nbsp;<a href="http://localhost:8000/blog/My-First-Contribution-to-Firefox/">...</a>
+</p>
+<p><a href="http://localhost:8000/blog/My-First-Contribution-to-Firefox/">Read More</a></p>
+]]>
+</description>
+<pubDate>Thu, 21 May 2020 00:00:00 +0000</pubDate>
+</item>
+<item>
+<title>Phone Died</title>
+<link>http://localhost:8000/blog/Phone-Died/</link>
+<description>
+<![CDATA[
+<p>
+My phone is a Xiaomi mi A2. I Specially bought this model because I was in love with google those days and this model was&nbsp;<a href="http://localhost:8000/blog/Phone-Died/">...</a>
+</p>
+<p><a href="http://localhost:8000/blog/Phone-Died/">Read More</a></p>
+]]>
+</description>
+<pubDate>Wed, 20 May 2020 00:00:00 +0000</pubDate>
+</item>
+<item>
 <title>On Automating a Lux Meter Reading</title>
 <link>http://localhost:8000/blog/On-Automating-a-Lux-Meter-Reading/</link>
 <description>
