@@ -7,6 +7,19 @@
 <description>kasun gamlath personal site</description>
 
 <item>
+<title>My Laptop</title>
+<link>http://localhost:8000/blog/My-Laptop/</link>
+<description>
+<![CDATA[
+<p>
+My personal laptop is a Thinkpad x220 It was released on 2011 April with starting price of i3 - 979 USD i5 - 1299 USD&nbsp;<a href="http://localhost:8000/blog/My-Laptop/">...</a>
+</p>
+<p><a href="http://localhost:8000/blog/My-Laptop/">Read More</a></p>
+]]>
+</description>
+<pubDate>Wed, 27 May 2020 00:00:00 +0000</pubDate>
+</item>
+<item>
 <title>Trying to Get Raw Accelerometer Data form MiBand3</title>
 <link>http://localhost:8000/blog/Trying-to-Get-Raw-Accelerometer-Data-form-MiBand3/</link>
 <description>
