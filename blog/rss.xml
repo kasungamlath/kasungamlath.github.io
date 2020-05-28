@@ -7,6 +7,19 @@
 <description>kasun gamlath personal site</description>
 
 <item>
+<title>Wifi Localization</title>
+<link>http://localhost:8000/blog/Wifi-Localization/</link>
+<description>
+<![CDATA[
+<p>
+Wifi localization work more or less like localization with GPS. Instead of GPS satellites it uses wifi access points. Instead of GPS receivers it uses&nbsp;<a href="http://localhost:8000/blog/Wifi-Localization/">...</a>
+</p>
+<p><a href="http://localhost:8000/blog/Wifi-Localization/">Read More</a></p>
+]]>
+</description>
+<pubDate>Thu, 28 May 2020 00:00:00 +0000</pubDate>
+</item>
+<item>
 <title>My Laptop</title>
 <link>http://localhost:8000/blog/My-Laptop/</link>
 <description>
