@@ -151,3 +151,7 @@ img {
 img[alt=camera-photo] {
 	max-width :100%
 }
+
+img[alt=full-width] {
+	max-width :100%
+}
