@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DIY vpn Server - Kasun Gamlath</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+
+<body id="DIY-vpn-Server">
+
+<nav>
+<section>
+    <span class="home">
+        <a href="/">Home</a>
+    </span>
+    <span class="links">
+        <a href="/blog/">Blog</a>
+        <a href="/photos/">Photos</a>
+    </span>
+</section>
+</nav>
+
+<main>
+<article>
+<h1><a href="/blog/DIY-vpn-Server/">DIY vpn Server</a></h1>
+<p class="meta">Published on 2020-06-01</p>
+<p>I'm using <a href="https://www.vultr.com/">vultr</a> as the provider for the vpn server host.
+(But it's possible to choose any VPS provider)
+Bellow are the steps I follow to create the vpn server.</p>
+<ol>
+<li>Build a virtual private server.(I'm using 3.50 USD/month configuration)</li>
+<li>Install ubuntu 18.04 on it.</li>
+<li>Once installation is finished ssh in to the server.</li>
+<li>Clone<a href="https://github.com/trailofbits/algo">algo</a> to the home directory in the server.</li>
+<li>Follow the installtion guide on repository.</li>
+<li>Once installation is done copy the config files to all the devices.</li>
+</ol>
+<p>Monthly VPN bandwidth capped at host configuration bandwidth devided by two.
+(In my configuration it's 500GB/2 = 250GB).</p>
+
+</article>
+
+</main>
+
+
+</body>
+</html>

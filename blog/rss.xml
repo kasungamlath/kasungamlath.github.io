@@ -7,6 +7,19 @@
 <description>kasun gamlath personal site</description>
 
 <item>
+<title>DIY vpn Server</title>
+<link>http://localhost:8000/blog/DIY-vpn-Server/</link>
+<description>
+<![CDATA[
+<p>
+I'm using vultr as the provider for the vpn server host. (But it's possible to choose any VPS provider) Bellow are the steps I follow&nbsp;<a href="http://localhost:8000/blog/DIY-vpn-Server/">...</a>
+</p>
+<p><a href="http://localhost:8000/blog/DIY-vpn-Server/">Read More</a></p>
+]]>
+</description>
+<pubDate>Mon, 01 Jun 2020 00:00:00 +0000</pubDate>
+</item>
+<item>
 <title>My Latest Laptop</title>
 <link>http://localhost:8000/blog/My-Latest-Laptop/</link>
 <description>
