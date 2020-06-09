@@ -3,434 +3,447 @@
 
 <channel>
 <title>Blog</title>
-<link>http://localhost:8000/</link>
+<link>http://localhost:8008/</link>
 <description>kasun gamlath personal site</description>
 
 <item>
-<title>Adjusting LED brightnes with PWM</title>
-<link>http://localhost:8000/blog/Adjusting-LED-brightnes-with-PWM/</link>
+<title>The Almost 5k Run</title>
+<link>http://localhost:8008/blog/The-Almost-5k-Run/</link>
 <description>
 <![CDATA[
 <p>
-Following the my adventure with capturing the RF signal with IR sensor, I had two ways to proceed. Go back to the shop and buy&nbsp;<a href="http://localhost:8000/blog/Adjusting-LED-brightnes-with-PWM/">...</a>
+I started running systematically last April. Before that I was running continuously for few months but couldn't feel a improvement. So I got into thinking&nbsp;<a href="http://localhost:8008/blog/The-Almost-5k-Run/">...</a>
 </p>
-<p><a href="http://localhost:8000/blog/Adjusting-LED-brightnes-with-PWM/">Read More</a></p>
+<p><a href="http://localhost:8008/blog/The-Almost-5k-Run/">Read More</a></p>
+]]>
+</description>
+<pubDate>Tue, 09 Jun 2020 00:00:00 +0000</pubDate>
+</item>
+<item>
+<title>Adjusting LED brightnes with PWM</title>
+<link>http://localhost:8008/blog/Adjusting-LED-brightnes-with-PWM/</link>
+<description>
+<![CDATA[
+<p>
+Following the my adventure with capturing the RF signal with IR sensor, I had two ways to proceed. Go back to the shop and buy&nbsp;<a href="http://localhost:8008/blog/Adjusting-LED-brightnes-with-PWM/">...</a>
+</p>
+<p><a href="http://localhost:8008/blog/Adjusting-LED-brightnes-with-PWM/">Read More</a></p>
 ]]>
 </description>
 <pubDate>Mon, 08 Jun 2020 00:00:00 +0000</pubDate>
 </item>
 <item>
 <title>Raspberry Pi Universal Remote</title>
-<link>http://localhost:8000/blog/Raspberry-Pi-Universal-Remote/</link>
+<link>http://localhost:8008/blog/Raspberry-Pi-Universal-Remote/</link>
 <description>
 <![CDATA[
 <p>
-I was working for a Smart light project for a while now. Goal of this project is to provide optimal brightness for occupancies in a&nbsp;<a href="http://localhost:8000/blog/Raspberry-Pi-Universal-Remote/">...</a>
+I was working for a Smart light project for a while now. Goal of this project is to provide optimal brightness for occupancies in a&nbsp;<a href="http://localhost:8008/blog/Raspberry-Pi-Universal-Remote/">...</a>
 </p>
-<p><a href="http://localhost:8000/blog/Raspberry-Pi-Universal-Remote/">Read More</a></p>
+<p><a href="http://localhost:8008/blog/Raspberry-Pi-Universal-Remote/">Read More</a></p>
 ]]>
 </description>
 <pubDate>Sun, 07 Jun 2020 00:00:00 +0000</pubDate>
 </item>
 <item>
 <title>Repairing My Old Android Phone Attempt 01</title>
-<link>http://localhost:8000/blog/Repairing-My-Old-Android-Phone-Attempt-01/</link>
+<link>http://localhost:8008/blog/Repairing-My-Old-Android-Phone-Attempt-01/</link>
 <description>
 <![CDATA[
 <p>
-It happened 2 weeks ago. My phone died. It was a Xiaomi mi A2. It suddenly refused to charge. here is the full story. Apart&nbsp;<a href="http://localhost:8000/blog/Repairing-My-Old-Android-Phone-Attempt-01/">...</a>
+It happened 2 weeks ago. My phone died. It was a Xiaomi mi A2. It suddenly refused to charge. here is the full story. Apart&nbsp;<a href="http://localhost:8008/blog/Repairing-My-Old-Android-Phone-Attempt-01/">...</a>
 </p>
-<p><a href="http://localhost:8000/blog/Repairing-My-Old-Android-Phone-Attempt-01/">Read More</a></p>
+<p><a href="http://localhost:8008/blog/Repairing-My-Old-Android-Phone-Attempt-01/">Read More</a></p>
 ]]>
 </description>
 <pubDate>Thu, 04 Jun 2020 00:00:00 +0000</pubDate>
 </item>
 <item>
 <title>Thoughts on iPhone</title>
-<link>http://localhost:8000/blog/Thoughts-on-iPhone/</link>
+<link>http://localhost:8008/blog/Thoughts-on-iPhone/</link>
 <description>
 <![CDATA[
 <p>
-After the death of my previous Android phone, last month I bought an iphone se 2020. These are my thoughts after 2 weeks of use.&nbsp;<a href="http://localhost:8000/blog/Thoughts-on-iPhone/">...</a>
+After the death of my previous Android phone, last month I bought an iphone se 2020. These are my thoughts after 2 weeks of use.&nbsp;<a href="http://localhost:8008/blog/Thoughts-on-iPhone/">...</a>
 </p>
-<p><a href="http://localhost:8000/blog/Thoughts-on-iPhone/">Read More</a></p>
+<p><a href="http://localhost:8008/blog/Thoughts-on-iPhone/">Read More</a></p>
 ]]>
 </description>
 <pubDate>Wed, 03 Jun 2020 00:00:00 +0000</pubDate>
 </item>
 <item>
 <title>DIY vpn Server</title>
-<link>http://localhost:8000/blog/DIY-vpn-Server/</link>
+<link>http://localhost:8008/blog/DIY-vpn-Server/</link>
 <description>
 <![CDATA[
 <p>
-I'm using vultr as the provider for the vpn server host. (But it's possible to choose any VPS provider) Bellow are the steps I follow&nbsp;<a href="http://localhost:8000/blog/DIY-vpn-Server/">...</a>
+I'm using vultr as the provider for the vpn server host. (But it's possible to choose any VPS provider) Bellow are the steps I follow&nbsp;<a href="http://localhost:8008/blog/DIY-vpn-Server/">...</a>
 </p>
-<p><a href="http://localhost:8000/blog/DIY-vpn-Server/">Read More</a></p>
+<p><a href="http://localhost:8008/blog/DIY-vpn-Server/">Read More</a></p>
 ]]>
 </description>
 <pubDate>Mon, 01 Jun 2020 00:00:00 +0000</pubDate>
 </item>
 <item>
 <title>My Latest Laptop</title>
-<link>http://localhost:8000/blog/My-Latest-Laptop/</link>
+<link>http://localhost:8008/blog/My-Latest-Laptop/</link>
 <description>
 <![CDATA[
 <p>
-First of all I bought this about a year ago. I have 3 working laptops(and one not working). thinkpad x220 - daily driver thinkpad x230&nbsp;<a href="http://localhost:8000/blog/My-Latest-Laptop/">...</a>
+First of all I bought this about a year ago. I have 3 working laptops(and one not working). thinkpad x220 - daily driver thinkpad x230&nbsp;<a href="http://localhost:8008/blog/My-Latest-Laptop/">...</a>
 </p>
-<p><a href="http://localhost:8000/blog/My-Latest-Laptop/">Read More</a></p>
+<p><a href="http://localhost:8008/blog/My-Latest-Laptop/">Read More</a></p>
 ]]>
 </description>
 <pubDate>Sat, 30 May 2020 00:00:00 +0000</pubDate>
 </item>
 <item>
 <title>Rationale Behind Brightness Module</title>
-<link>http://localhost:8000/blog/Rationale-Behind-Brightness-Module/</link>
+<link>http://localhost:8008/blog/Rationale-Behind-Brightness-Module/</link>
 <description>
 <![CDATA[
 <p>
-The research project I'm working on these days is suppose to make a building smart. It should know it's occupants whereabouts and have to adjust&nbsp;<a href="http://localhost:8000/blog/Rationale-Behind-Brightness-Module/">...</a>
+The research project I'm working on these days is suppose to make a building smart. It should know it's occupants whereabouts and have to adjust&nbsp;<a href="http://localhost:8008/blog/Rationale-Behind-Brightness-Module/">...</a>
 </p>
-<p><a href="http://localhost:8000/blog/Rationale-Behind-Brightness-Module/">Read More</a></p>
+<p><a href="http://localhost:8008/blog/Rationale-Behind-Brightness-Module/">Read More</a></p>
 ]]>
 </description>
 <pubDate>Fri, 29 May 2020 00:00:00 +0000</pubDate>
 </item>
 <item>
 <title>Wifi Localization</title>
-<link>http://localhost:8000/blog/Wifi-Localization/</link>
+<link>http://localhost:8008/blog/Wifi-Localization/</link>
 <description>
 <![CDATA[
 <p>
-Wifi localization work more or less like localization with GPS. Instead of GPS satellites it uses wifi access points. Instead of GPS receivers it uses&nbsp;<a href="http://localhost:8000/blog/Wifi-Localization/">...</a>
+Wifi localization work more or less like localization with GPS. Instead of GPS satellites it uses wifi access points. Instead of GPS receivers it uses&nbsp;<a href="http://localhost:8008/blog/Wifi-Localization/">...</a>
 </p>
-<p><a href="http://localhost:8000/blog/Wifi-Localization/">Read More</a></p>
+<p><a href="http://localhost:8008/blog/Wifi-Localization/">Read More</a></p>
 ]]>
 </description>
 <pubDate>Thu, 28 May 2020 00:00:00 +0000</pubDate>
 </item>
 <item>
 <title>My Laptop</title>
-<link>http://localhost:8000/blog/My-Laptop/</link>
+<link>http://localhost:8008/blog/My-Laptop/</link>
 <description>
 <![CDATA[
 <p>
-My personal laptop is a Thinkpad x220 It was released on 2011 April with starting price of i3 - 979 USD i5 - 1299 USD&nbsp;<a href="http://localhost:8000/blog/My-Laptop/">...</a>
+My personal laptop is a Thinkpad x220 It was released on 2011 April with starting price of i3 - 979 USD i5 - 1299 USD&nbsp;<a href="http://localhost:8008/blog/My-Laptop/">...</a>
 </p>
-<p><a href="http://localhost:8000/blog/My-Laptop/">Read More</a></p>
+<p><a href="http://localhost:8008/blog/My-Laptop/">Read More</a></p>
 ]]>
 </description>
 <pubDate>Wed, 27 May 2020 00:00:00 +0000</pubDate>
 </item>
 <item>
 <title>Trying to Get Raw Accelerometer Data form MiBand3</title>
-<link>http://localhost:8000/blog/Trying-to-Get-Raw-Accelerometer-Data-form-MiBand3/</link>
+<link>http://localhost:8008/blog/Trying-to-Get-Raw-Accelerometer-Data-form-MiBand3/</link>
 <description>
 <![CDATA[
 <p>
-As I have being running more frequently now I felt a need to log those runs. So I could see the progress. My plan was&nbsp;<a href="http://localhost:8000/blog/Trying-to-Get-Raw-Accelerometer-Data-form-MiBand3/">...</a>
+As I have being running more frequently now I felt a need to log those runs. So I could see the progress. My plan was&nbsp;<a href="http://localhost:8008/blog/Trying-to-Get-Raw-Accelerometer-Data-form-MiBand3/">...</a>
 </p>
-<p><a href="http://localhost:8000/blog/Trying-to-Get-Raw-Accelerometer-Data-form-MiBand3/">Read More</a></p>
+<p><a href="http://localhost:8008/blog/Trying-to-Get-Raw-Accelerometer-Data-form-MiBand3/">Read More</a></p>
 ]]>
 </description>
 <pubDate>Tue, 26 May 2020 00:00:00 +0000</pubDate>
 </item>
 <item>
 <title>New Phone</title>
-<link>http://localhost:8000/blog/New-Phone/</link>
+<link>http://localhost:8008/blog/New-Phone/</link>
 <description>
 <![CDATA[
 <p>
-After the death of my previous phone I ordered a new phone. Due to frustration on android update system(IMO my last phone died because of&nbsp;<a href="http://localhost:8000/blog/New-Phone/">...</a>
+After the death of my previous phone I ordered a new phone. Due to frustration on android update system(IMO my last phone died because of&nbsp;<a href="http://localhost:8008/blog/New-Phone/">...</a>
 </p>
-<p><a href="http://localhost:8000/blog/New-Phone/">Read More</a></p>
+<p><a href="http://localhost:8008/blog/New-Phone/">Read More</a></p>
 ]]>
 </description>
 <pubDate>Fri, 22 May 2020 00:00:00 +0000</pubDate>
 </item>
 <item>
 <title>My First Contribution to Firefox</title>
-<link>http://localhost:8000/blog/My-First-Contribution-to-Firefox/</link>
+<link>http://localhost:8008/blog/My-First-Contribution-to-Firefox/</link>
 <description>
 <![CDATA[
 <p>
-My fist code contribution to Mozilla Firefox got accepted. It's just fixing a code analysis bug.(and fixing another code analysis warning which caused by the&nbsp;<a href="http://localhost:8000/blog/My-First-Contribution-to-Firefox/">...</a>
+My fist code contribution to Mozilla Firefox got accepted. It's just fixing a code analysis bug.(and fixing another code analysis warning which caused by the&nbsp;<a href="http://localhost:8008/blog/My-First-Contribution-to-Firefox/">...</a>
 </p>
-<p><a href="http://localhost:8000/blog/My-First-Contribution-to-Firefox/">Read More</a></p>
+<p><a href="http://localhost:8008/blog/My-First-Contribution-to-Firefox/">Read More</a></p>
 ]]>
 </description>
 <pubDate>Thu, 21 May 2020 00:00:00 +0000</pubDate>
 </item>
 <item>
 <title>Phone Died</title>
-<link>http://localhost:8000/blog/Phone-Died/</link>
+<link>http://localhost:8008/blog/Phone-Died/</link>
 <description>
 <![CDATA[
 <p>
-My phone is a Xiaomi mi A2. I Specially bought this model because I was in love with google those days and this model was&nbsp;<a href="http://localhost:8000/blog/Phone-Died/">...</a>
+My phone is a Xiaomi mi A2. I Specially bought this model because I was in love with google those days and this model was&nbsp;<a href="http://localhost:8008/blog/Phone-Died/">...</a>
 </p>
-<p><a href="http://localhost:8000/blog/Phone-Died/">Read More</a></p>
+<p><a href="http://localhost:8008/blog/Phone-Died/">Read More</a></p>
 ]]>
 </description>
 <pubDate>Wed, 20 May 2020 00:00:00 +0000</pubDate>
 </item>
 <item>
-<title>On Automating a Lux Meter Reading</title>
-<link>http://localhost:8000/blog/On-Automating-a-Lux-Meter-Reading/</link>
+<title>Detecting luminance level of a room using CCTV camera feed</title>
+<link>http://localhost:8008/blog/Detecting-luminance-level-of-a-room-using-CCTV-camera-feed/</link>
 <description>
 <![CDATA[
 <p>
-A requirement came up for a project I've been working on recently to continuosly collect lux values+images on certain surfaces. Since the data collection needed&nbsp;<a href="http://localhost:8000/blog/On-Automating-a-Lux-Meter-Reading/">...</a>
+NOTE :Work in Progress Recently I started working on a new research project. Goal of this project is to find a relationship between luminance value&nbsp;<a href="http://localhost:8008/blog/Detecting-luminance-level-of-a-room-using-CCTV-camera-feed/">...</a>
 </p>
-<p><a href="http://localhost:8000/blog/On-Automating-a-Lux-Meter-Reading/">Read More</a></p>
+<p><a href="http://localhost:8008/blog/Detecting-luminance-level-of-a-room-using-CCTV-camera-feed/">Read More</a></p>
 ]]>
 </description>
 <pubDate>Wed, 25 Mar 2020 00:00:00 +0000</pubDate>
 </item>
 <item>
-<title>Detecting luminance level of a room using CCTV camera feed</title>
-<link>http://localhost:8000/blog/Detecting-luminance-level-of-a-room-using-CCTV-camera-feed/</link>
+<title>On Automating a Lux Meter Reading</title>
+<link>http://localhost:8008/blog/On-Automating-a-Lux-Meter-Reading/</link>
 <description>
 <![CDATA[
 <p>
-NOTE :Work in Progress Recently I started working on a new research project. Goal of this project is to find a relationship between luminance value&nbsp;<a href="http://localhost:8000/blog/Detecting-luminance-level-of-a-room-using-CCTV-camera-feed/">...</a>
+A requirement came up for a project I've been working on recently to continuosly collect lux values+images on certain surfaces. Since the data collection needed&nbsp;<a href="http://localhost:8008/blog/On-Automating-a-Lux-Meter-Reading/">...</a>
 </p>
-<p><a href="http://localhost:8000/blog/Detecting-luminance-level-of-a-room-using-CCTV-camera-feed/">Read More</a></p>
+<p><a href="http://localhost:8008/blog/On-Automating-a-Lux-Meter-Reading/">Read More</a></p>
 ]]>
 </description>
 <pubDate>Wed, 25 Mar 2020 00:00:00 +0000</pubDate>
 </item>
 <item>
 <title>How To Make Site Like This</title>
-<link>http://localhost:8000/blog/How-To-Make-Site-Like-This/</link>
+<link>http://localhost:8008/blog/How-To-Make-Site-Like-This/</link>
 <description>
 <![CDATA[
 <p>
-After using Jekyll for some time(about 4 years) and writing occasional posts recently I decided to try something new. The situation with static site generators&nbsp;<a href="http://localhost:8000/blog/How-To-Make-Site-Like-This/">...</a>
+After using Jekyll for some time(about 4 years) and writing occasional posts recently I decided to try something new. The situation with static site generators&nbsp;<a href="http://localhost:8008/blog/How-To-Make-Site-Like-This/">...</a>
 </p>
-<p><a href="http://localhost:8000/blog/How-To-Make-Site-Like-This/">Read More</a></p>
+<p><a href="http://localhost:8008/blog/How-To-Make-Site-Like-This/">Read More</a></p>
 ]]>
 </description>
 <pubDate>Mon, 09 Dec 2019 00:00:00 +0000</pubDate>
 </item>
 <item>
 <title>Trainbuddy relaunched</title>
-<link>http://localhost:8000/blog/Trainbuddy-relaunched/</link>
+<link>http://localhost:8008/blog/Trainbuddy-relaunched/</link>
 <description>
 <![CDATA[
 <p>
-I started working on train buddy app when I was 3rd year undergraduate. I first released it somewhere in 2015 and did a blog post.&nbsp;<a href="http://localhost:8000/blog/Trainbuddy-relaunched/">...</a>
+I started working on train buddy app when I was 3rd year undergraduate. I first released it somewhere in 2015 and did a blog post.&nbsp;<a href="http://localhost:8008/blog/Trainbuddy-relaunched/">...</a>
 </p>
-<p><a href="http://localhost:8000/blog/Trainbuddy-relaunched/">Read More</a></p>
+<p><a href="http://localhost:8008/blog/Trainbuddy-relaunched/">Read More</a></p>
 ]]>
 </description>
 <pubDate>Sat, 14 Jul 2018 00:00:00 +0000</pubDate>
 </item>
 <item>
 <title>TrainBuddy 2</title>
-<link>http://localhost:8000/blog/TrainBuddy-2/</link>
+<link>http://localhost:8008/blog/TrainBuddy-2/</link>
 <description>
 <![CDATA[
 <p>
-After more than two years, today I released a new version of TrainBuddy (TrainBuddy acted as my ultimate portfolio app to land current job). New&nbsp;<a href="http://localhost:8000/blog/TrainBuddy-2/">...</a>
+After more than two years, today I released a new version of TrainBuddy (TrainBuddy acted as my ultimate portfolio app to land current job). New&nbsp;<a href="http://localhost:8008/blog/TrainBuddy-2/">...</a>
 </p>
-<p><a href="http://localhost:8000/blog/TrainBuddy-2/">Read More</a></p>
+<p><a href="http://localhost:8008/blog/TrainBuddy-2/">Read More</a></p>
 ]]>
 </description>
 <pubDate>Sat, 01 Jul 2017 00:00:00 +0000</pubDate>
 </item>
 <item>
 <title>From being an Undergraduate to Software Engineer</title>
-<link>http://localhost:8000/blog/From-being-an-Undergraduate-to-Software-Engineer/</link>
+<link>http://localhost:8008/blog/From-being-an-Undergraduate-to-Software-Engineer/</link>
 <description>
 <![CDATA[
 <p>
-I completed the final exams of my B.Sc degree in last month(2016 Jan) and was lucky enough to start working as a Software Engineer from&nbsp;<a href="http://localhost:8000/blog/From-being-an-Undergraduate-to-Software-Engineer/">...</a>
+I completed the final exams of my B.Sc degree in last month(2016 Jan) and was lucky enough to start working as a Software Engineer from&nbsp;<a href="http://localhost:8008/blog/From-being-an-Undergraduate-to-Software-Engineer/">...</a>
 </p>
-<p><a href="http://localhost:8000/blog/From-being-an-Undergraduate-to-Software-Engineer/">Read More</a></p>
+<p><a href="http://localhost:8008/blog/From-being-an-Undergraduate-to-Software-Engineer/">Read More</a></p>
 ]]>
 </description>
 <pubDate>Sat, 13 Feb 2016 00:00:00 +0000</pubDate>
 </item>
 <item>
 <title>Big Bad Stupid Facebook</title>
-<link>http://localhost:8000/blog/Big-Bad-Stupid-Facebook/</link>
+<link>http://localhost:8008/blog/Big-Bad-Stupid-Facebook/</link>
 <description>
 <![CDATA[
 <p>
-If the Facebook knows your mobile number, know that regardless of your privacy setting it's accessible to virtually anyone. To check this vulnerability for yourself&nbsp;<a href="http://localhost:8000/blog/Big-Bad-Stupid-Facebook/">...</a>
+If the Facebook knows your mobile number, know that regardless of your privacy setting it's accessible to virtually anyone. To check this vulnerability for yourself&nbsp;<a href="http://localhost:8008/blog/Big-Bad-Stupid-Facebook/">...</a>
 </p>
-<p><a href="http://localhost:8000/blog/Big-Bad-Stupid-Facebook/">Read More</a></p>
+<p><a href="http://localhost:8008/blog/Big-Bad-Stupid-Facebook/">Read More</a></p>
 ]]>
 </description>
 <pubDate>Sat, 21 Nov 2015 00:00:00 +0000</pubDate>
 </item>
 <item>
 <title>TrainBuddy TrainMap Beta</title>
-<link>http://localhost:8000/blog/TrainBuddy-TrainMap-Beta/</link>
+<link>http://localhost:8008/blog/TrainBuddy-TrainMap-Beta/</link>
 <description>
 <![CDATA[
 <p>
-After being in alpha state for about a month Train Buddy v2 (with TrainMap) is moving to beta today. For those who didn't know what's&nbsp;<a href="http://localhost:8000/blog/TrainBuddy-TrainMap-Beta/">...</a>
+After being in alpha state for about a month Train Buddy v2 (with TrainMap) is moving to beta today. For those who didn't know what's&nbsp;<a href="http://localhost:8008/blog/TrainBuddy-TrainMap-Beta/">...</a>
 </p>
-<p><a href="http://localhost:8000/blog/TrainBuddy-TrainMap-Beta/">Read More</a></p>
+<p><a href="http://localhost:8008/blog/TrainBuddy-TrainMap-Beta/">Read More</a></p>
 ]]>
 </description>
 <pubDate>Sat, 12 Sep 2015 00:00:00 +0000</pubDate>
 </item>
 <item>
 <title>TrainBuddy Loaction Tracking</title>
-<link>http://localhost:8000/blog/TrainBuddy-Loaction-Tracking/</link>
+<link>http://localhost:8008/blog/TrainBuddy-Loaction-Tracking/</link>
 <description>
 <![CDATA[
 <p>
-Just before the end of semester vacation I released a beta of train buddy with location tracking service. Once a user started it through the&nbsp;<a href="http://localhost:8000/blog/TrainBuddy-Loaction-Tracking/">...</a>
+Just before the end of semester vacation I released a beta of train buddy with location tracking service. Once a user started it through the&nbsp;<a href="http://localhost:8008/blog/TrainBuddy-Loaction-Tracking/">...</a>
 </p>
-<p><a href="http://localhost:8000/blog/TrainBuddy-Loaction-Tracking/">Read More</a></p>
+<p><a href="http://localhost:8008/blog/TrainBuddy-Loaction-Tracking/">Read More</a></p>
 ]]>
 </description>
 <pubDate>Sun, 23 Aug 2015 00:00:00 +0000</pubDate>
 </item>
 <item>
 <title>TrainBuddy offline search</title>
-<link>http://localhost:8000/blog/TrainBuddy-offline-search/</link>
+<link>http://localhost:8008/blog/TrainBuddy-offline-search/</link>
 <description>
 <![CDATA[
 <p>
-Between writing a service to report the location and providing offline search I choose to implement offline search first. I did so because I thought&nbsp;<a href="http://localhost:8000/blog/TrainBuddy-offline-search/">...</a>
+Between writing a service to report the location and providing offline search I choose to implement offline search first. I did so because I thought&nbsp;<a href="http://localhost:8008/blog/TrainBuddy-offline-search/">...</a>
 </p>
-<p><a href="http://localhost:8000/blog/TrainBuddy-offline-search/">Read More</a></p>
+<p><a href="http://localhost:8008/blog/TrainBuddy-offline-search/">Read More</a></p>
 ]]>
 </description>
 <pubDate>Sat, 01 Aug 2015 00:00:00 +0000</pubDate>
 </item>
 <item>
-<title>Android Wireless Debugging</title>
-<link>http://localhost:8000/blog/Android-Wireless-Debugging/</link>
+<title>Dimple Hacker News Reader</title>
+<link>http://localhost:8008/blog/Dimple-Hacker-News-Reader/</link>
 <description>
 <![CDATA[
 <p>
-Few weeks ago I came to know about this cool feature of wireless ADB (Android Debug Bridge). Following method doesn't need root access to device.&nbsp;<a href="http://localhost:8000/blog/Android-Wireless-Debugging/">...</a>
+In the same after exam break that I changed the TrainBuddy (my other android app)'s visual design, I made some changes to Hacker News reader.(&nbsp;<a href="http://localhost:8008/blog/Dimple-Hacker-News-Reader/">...</a>
 </p>
-<p><a href="http://localhost:8000/blog/Android-Wireless-Debugging/">Read More</a></p>
+<p><a href="http://localhost:8008/blog/Dimple-Hacker-News-Reader/">Read More</a></p>
 ]]>
 </description>
 <pubDate>Fri, 24 Jul 2015 00:00:00 +0000</pubDate>
 </item>
 <item>
 <title>TrainBuddy New Look</title>
-<link>http://localhost:8000/blog/TrainBuddy-New-Look/</link>
+<link>http://localhost:8008/blog/TrainBuddy-New-Look/</link>
 <description>
 <![CDATA[
 <p>
-After the semester exams I got an break for few weeks. So I took that time to do a thing I wanted to do for&nbsp;<a href="http://localhost:8000/blog/TrainBuddy-New-Look/">...</a>
+After the semester exams I got an break for few weeks. So I took that time to do a thing I wanted to do for&nbsp;<a href="http://localhost:8008/blog/TrainBuddy-New-Look/">...</a>
 </p>
-<p><a href="http://localhost:8000/blog/TrainBuddy-New-Look/">Read More</a></p>
+<p><a href="http://localhost:8008/blog/TrainBuddy-New-Look/">Read More</a></p>
 ]]>
 </description>
 <pubDate>Fri, 24 Jul 2015 00:00:00 +0000</pubDate>
 </item>
 <item>
-<title>Dimple Hacker News Reader</title>
-<link>http://localhost:8000/blog/Dimple-Hacker-News-Reader/</link>
+<title>Android Wireless Debugging</title>
+<link>http://localhost:8008/blog/Android-Wireless-Debugging/</link>
 <description>
 <![CDATA[
 <p>
-In the same after exam break that I changed the TrainBuddy (my other android app)'s visual design, I made some changes to Hacker News reader.(&nbsp;<a href="http://localhost:8000/blog/Dimple-Hacker-News-Reader/">...</a>
+Few weeks ago I came to know about this cool feature of wireless ADB (Android Debug Bridge). Following method doesn't need root access to device.&nbsp;<a href="http://localhost:8008/blog/Android-Wireless-Debugging/">...</a>
 </p>
-<p><a href="http://localhost:8000/blog/Dimple-Hacker-News-Reader/">Read More</a></p>
+<p><a href="http://localhost:8008/blog/Android-Wireless-Debugging/">Read More</a></p>
 ]]>
 </description>
 <pubDate>Fri, 24 Jul 2015 00:00:00 +0000</pubDate>
 </item>
 <item>
 <title>One activity to rule them all</title>
-<link>http://localhost:8000/blog/One-activity-to-rule-them-all/</link>
+<link>http://localhost:8008/blog/One-activity-to-rule-them-all/</link>
 <description>
 <![CDATA[
 <p>
-This is a post about current architecture of the Train Buddy application. It has only one activity and multiple fragments for work and UI. Communication&nbsp;<a href="http://localhost:8000/blog/One-activity-to-rule-them-all/">...</a>
+This is a post about current architecture of the Train Buddy application. It has only one activity and multiple fragments for work and UI. Communication&nbsp;<a href="http://localhost:8008/blog/One-activity-to-rule-them-all/">...</a>
 </p>
-<p><a href="http://localhost:8000/blog/One-activity-to-rule-them-all/">Read More</a></p>
+<p><a href="http://localhost:8008/blog/One-activity-to-rule-them-all/">Read More</a></p>
 ]]>
 </description>
 <pubDate>Tue, 21 Jul 2015 00:00:00 +0000</pubDate>
 </item>
 <item>
 <title>HNYC v0</title>
-<link>http://localhost:8000/blog/HNYC-v0/</link>
+<link>http://localhost:8008/blog/HNYC-v0/</link>
 <description>
 <![CDATA[
 <p>
-Today I came upon a android application with material design to read xkcd comics which is still in alpha stage. Interesting point is that it's&nbsp;<a href="http://localhost:8000/blog/HNYC-v0/">...</a>
+Today I came upon a android application with material design to read xkcd comics which is still in alpha stage. Interesting point is that it's&nbsp;<a href="http://localhost:8008/blog/HNYC-v0/">...</a>
 </p>
-<p><a href="http://localhost:8000/blog/HNYC-v0/">Read More</a></p>
+<p><a href="http://localhost:8008/blog/HNYC-v0/">Read More</a></p>
 ]]>
 </description>
 <pubDate>Sun, 21 Jun 2015 00:00:00 +0000</pubDate>
 </item>
 <item>
 <title>Forking Youtube dl Web</title>
-<link>http://localhost:8000/blog/Forking-Youtube-dl-Web/</link>
+<link>http://localhost:8008/blog/Forking-Youtube-dl-Web/</link>
 <description>
 <![CDATA[
 <p>
-After playing with heroku for few weeks while wrestling with my fb app for research, I built a web app I always wanted. It was&nbsp;<a href="http://localhost:8000/blog/Forking-Youtube-dl-Web/">...</a>
+After playing with heroku for few weeks while wrestling with my fb app for research, I built a web app I always wanted. It was&nbsp;<a href="http://localhost:8008/blog/Forking-Youtube-dl-Web/">...</a>
 </p>
-<p><a href="http://localhost:8000/blog/Forking-Youtube-dl-Web/">Read More</a></p>
+<p><a href="http://localhost:8008/blog/Forking-Youtube-dl-Web/">Read More</a></p>
 ]]>
 </description>
 <pubDate>Fri, 19 Jun 2015 00:00:00 +0000</pubDate>
 </item>
 <item>
 <title>Train Buddy 100 installs</title>
-<link>http://localhost:8000/blog/Train-Buddy-100-installs/</link>
+<link>http://localhost:8008/blog/Train-Buddy-100-installs/</link>
 <description>
 <![CDATA[
 <p>
-After 2 months since public release Train Buddy now have more than 100 total installs. I know it's not much. But it's just another app&nbsp;<a href="http://localhost:8000/blog/Train-Buddy-100-installs/">...</a>
+After 2 months since public release Train Buddy now have more than 100 total installs. I know it's not much. But it's just another app&nbsp;<a href="http://localhost:8008/blog/Train-Buddy-100-installs/">...</a>
 </p>
-<p><a href="http://localhost:8000/blog/Train-Buddy-100-installs/">Read More</a></p>
+<p><a href="http://localhost:8008/blog/Train-Buddy-100-installs/">Read More</a></p>
 ]]>
 </description>
 <pubDate>Thu, 18 Jun 2015 00:00:00 +0000</pubDate>
 </item>
 <item>
-<title>How Create a blog like this</title>
-<link>http://localhost:8000/blog/How-Create-a-blog-like-this/</link>
+<title>Train Buddy v1</title>
+<link>http://localhost:8008/blog/Train-Buddy-v1/</link>
 <description>
 <![CDATA[
 <p>
-Process requires a github account (which you can have for free) and about 30 mins of free time. This is made possible by FOSS tool&nbsp;<a href="http://localhost:8000/blog/How-Create-a-blog-like-this/">...</a>
+After few months of beta testing, today I have released the Train Buddy app to public. Train Buddy is a android app for getting the&nbsp;<a href="http://localhost:8008/blog/Train-Buddy-v1/">...</a>
 </p>
-<p><a href="http://localhost:8000/blog/How-Create-a-blog-like-this/">Read More</a></p>
+<p><a href="http://localhost:8008/blog/Train-Buddy-v1/">Read More</a></p>
 ]]>
 </description>
 <pubDate>Fri, 17 Apr 2015 00:00:00 +0000</pubDate>
 </item>
 <item>
-<title>Train Buddy v1</title>
-<link>http://localhost:8000/blog/Train-Buddy-v1/</link>
+<title>How Create a blog like this</title>
+<link>http://localhost:8008/blog/How-Create-a-blog-like-this/</link>
 <description>
 <![CDATA[
 <p>
-After few months of beta testing, today I have released the Train Buddy app to public. Train Buddy is a android app for getting the&nbsp;<a href="http://localhost:8000/blog/Train-Buddy-v1/">...</a>
+Process requires a github account (which you can have for free) and about 30 mins of free time. This is made possible by FOSS tool&nbsp;<a href="http://localhost:8008/blog/How-Create-a-blog-like-this/">...</a>
 </p>
-<p><a href="http://localhost:8000/blog/Train-Buddy-v1/">Read More</a></p>
+<p><a href="http://localhost:8008/blog/How-Create-a-blog-like-this/">Read More</a></p>
 ]]>
 </description>
 <pubDate>Fri, 17 Apr 2015 00:00:00 +0000</pubDate>
 </item>
 <item>
 <title>Train Buddy Beta</title>
-<link>http://localhost:8000/blog/Train-Buddy-Beta/</link>
+<link>http://localhost:8008/blog/Train-Buddy-Beta/</link>
 <description>
 <![CDATA[
 <p>
-Android app for getting the train schedule of Srilankan trains and view the current status (location and speed) of the train (Unfortunately this status function&nbsp;<a href="http://localhost:8000/blog/Train-Buddy-Beta/">...</a>
+Android app for getting the train schedule of Srilankan trains and view the current status (location and speed) of the train (Unfortunately this status function&nbsp;<a href="http://localhost:8008/blog/Train-Buddy-Beta/">...</a>
 </p>
-<p><a href="http://localhost:8000/blog/Train-Buddy-Beta/">Read More</a></p>
+<p><a href="http://localhost:8008/blog/Train-Buddy-Beta/">Read More</a></p>
 ]]>
 </description>
 <pubDate>Thu, 16 Apr 2015 00:00:00 +0000</pubDate>
