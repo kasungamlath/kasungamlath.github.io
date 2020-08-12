@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fullmoon and Teapot - Kasun Gamlath</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+
+<body id="Fullmoon-and-Teapot">
+
+<nav>
+<section>
+    <span class="home">
+        <a href="/">Home</a>
+    </span>
+    <span class="links">
+        <a href="/blog/">Blog</a>
+        <a href="/photos/">Photos</a>
+        <a href="/books/">Books</a>
+    </span>
+</section>
+</nav>
+
+<main>
+<article>
+<h1><a href="/blog/Fullmoon-and-Teapot/">Fullmoon and Teapot</a></h1>
+<p class="meta">Published on 2020-08-12</p>
+<p>I'm working on building a testbed to evaluate some hypothesis related to a smart light project.
+This test bed involves a cctv camera and multiple adjustable light sources.
+Light sources are LEDs which made adjustable by connecting to raspberry pi units.
+Then leveraging the (P)ulse (W)idth (M)odulation to adjust the brightness.
+In addition to light source there are also lux sensors(bh1750) plugged into raspberry pi.</p>
+<p>The design of the software system is to make the raspberry pi units as much as dumb.
+So it only does the bare minimum required.
+Reason behind this is troubleshooting, deploying and maintaining the system resources on these raspberry pi units are bit difficult.
+Then using a server as a central processor to do the rest.</p>
+<p>For the raspberry pi I developed a tiny web server named <strong>teapot</strong>.
+And for the central processor a application named <strong>fullmoon</strong>.</p>
+<p>Teapot is a flask app which runs behind gunicorn server that have 3 endpoints</p>
+<ul>
+<li>[GET] /dc - to receive the PWM duty cycle value.</li>
+<li>[POST] /dc - to set the PWM duty cycle value.</li>
+<li>[GET] /lux - to receive the lux values from lux sensors plugged in to raspberry pi.</li>
+</ul>
+<p>And that's all the functionality of the teapot.</p>
+<p>Fullmoon can communicate with multiple teapots.
+It's being deployed using docker-compose.</p>
+<p>It has 3 services</p>
+<ul>
+<li>app - the logic of the application.
+<ul>
+<li>records the lux and duty cycle values.</li>
+<li>can call the 3 end points of teapot.</li>
+</ul>
+</li>
+<li>postgre - relational database to store the recorded values.</li>
+<li>admineer - front end for the database.</li>
+</ul>
+<p>That's it for the base system.</p>
+<p>I hope, with the time fullmoon will be grow into be really smart and teapot will get better with doing what's being asked.</p>
+
+</article>
+
+</main>
+
+
+</body>
+</html>
