@@ -2,10 +2,23 @@
 <rss version="2.0">
 
 <channel>
-<title>Books</title>
+<title>Books / Papers</title>
 <link>http://localhost:8008/</link>
 <description>kasun gamlath personal site</description>
 
+<item>
+<title>Digital eye strain:prevalence, measurement and amelioration</title>
+<link>http://localhost:8008/books/Digital-eye-strain:prevalence,-measurement-and-amelioration/</link>
+<description>
+<![CDATA[
+<p>
+Digital Eye Stain (DES) have estimated prevalence of 50% or more among Computer Users. Symptoms fall in to 2 categories. due to accommodative or binocular&nbsp;<a href="http://localhost:8008/books/Digital-eye-strain:prevalence,-measurement-and-amelioration/">...</a>
+</p>
+<p><a href="http://localhost:8008/books/Digital-eye-strain:prevalence,-measurement-and-amelioration/">Read More</a></p>
+]]>
+</description>
+<pubDate>Thu, 03 Sep 2020 00:00:00 +0000</pubDate>
+</item>
 <item>
 <title>Flying Colours</title>
 <link>http://localhost:8008/books/Flying-Colours/</link>
