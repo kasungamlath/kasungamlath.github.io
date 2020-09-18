@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Analysing DeviceAnalyzer data For Screen Brightness and Lux Patterns - Kasun Gamlath</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+
+<body id="Analysing-DeviceAnalyzer-data-For-Screen-Brightness-and-Lux-Patterns">
+
+<nav>
+<section>
+    <span class="home">
+        <a href="/">Home</a>
+    </span>
+    <span class="links">
+        <a href="/blog/">Blog</a>
+        <a href="/photos/">Photos</a>
+        <a href="/books/">Books / Papers</a>
+    </span>
+</section>
+</nav>
+
+<main>
+<article>
+<h1><a href="/blog/Analysing-DeviceAnalyzer-data-For-Screen-Brightness-and-Lux-Patterns/">Analysing DeviceAnalyzer data For Screen Brightness and Lux Patterns</a></h1>
+<p class="meta">Published on 2020-09-17</p>
+<p>I started working on a new project.
+Goal of the project is to find the impact of the screen brightness for the user's well-being.</p>
+<p>As a preliminary study we set out to find the users' relationship with there device screen brightness,
+and device screens' brightness with the brightness of the environment.</p>
+<p>My colleague got us a <a href="https://deviceanalyzer.cl.cam.ac.uk/keyValuePairs.htm">data set</a>.
+It's 267GB big.
+It contained compressed csv files.
+It had data collected from 1467 individuals mobile devices.
+Each individual had there own subfolder,
+Inside that subfolder partitioned gz files + whole gz file.</p>
+<p>This is how the CSV file is formated.</p>
+<p><code>1;127623291;2012-09-28T21:52:02.335+0530;time|bootup;2012-09-28T21:52:02.547+0530 2;127623410;2012-09-28T21:52:02.454+0530;startup;2012-09-28T21:52:02.665+0530 4;127623656;2012-09-28T21:52:02.700+0530;system|device;golfu 7;127623657;2012-09-28T21:52:02.701+0530;system|apiversion;15 10;127623659;2012-09-28T21:52:02.703+0530;system|swversion;1.1.5 11;127623676;2012-09-28T21:52:02.720+0530;system|swbuild;1192 13;127623677;2012-09-28T21:52:02.721+0530;system|display|resolution;320x480 16;127623678;2012-09-28T21:52:02.722+0530;system|display|orientation;1 18;127623705;2012-09-28T21:52:02.749+0530;system|memory|size;424732 kB 20;127623706;2012-09-28T21:52:02.750+0530;system|memory|threshold;40118272</code></p>
+<p>We were interested in below lines.</p>
+<p><code>104;127625981;2012-09-28T21:52:05.025+0530;screen|brightness|level;142 105;127625982;2012-09-28T21:52:05.026+0530;screen|brightness|mode;automatic 1575;129368801;2012-09-28T22:21:07.845+0530;screen|brightness|level;142 1576;129368803;2012-09-28T22:21:07.847+0530;screen|brightness|mode;automatic</code></p>
+<p>...</p>
+<p><code>576887;41086040;2013-06-25T20:35:59.682+0530;sensor|info|2|type;light 665;44531752;2013-06-19T10:59:30.258+0530;sensor|data|2|raw;10240.0,0.0,0.0</code></p>
+<p>These lines contained periodically collected screen brightness data(and the setting which the brightness was on, automatic or manual).
+And lux sensor data.</p>
+<p>I started with writing below script.
+It will recursively go to each subfolder.
+unzip the &quot;whole&quot; CSV file.
+will create a new CSV &quot;user_id.csv&quot; with only the necessary lines.</p>
+<pre><code>def get_immediate_subdirectories(a_dir):
+    return [name for name in os.listdir(a_dir) if os.path.isdir(os.path.join(a_dir, name))]
+
+sub_dirs = (get_immediate_subdirectories('.'))
+
+for sub_dir in sub_dirs:
+    gz_file_name = &quot;{}/all.csv.gz&quot;.format(sub_dir)
+    original_csv_name = &quot;{}/all.csv&quot;.format(sub_dir)
+    original_filtered_csv_name = &quot;{}/filtered.csv&quot;.format(sub_dir)
+    new_csv_name = &quot;{}.csv&quot;.format(sub_dir.split('/')[-1])
+    print(gz_file_name)
+    subprocess.call([&quot;gunzip&quot;, gz_file_name])
+    with open(original_filtered_csv_name, 'w') as f:
+        subprocess.call(['grep -e &quot;screen|brightness&quot; -e &quot;sensor&quot; ' + original_csv_name, ], shell=True, stdout=f)
+
+    os.rename(original_filtered_csv_name, new_csv_name)
+    shutil.rmtree(sub_dir)
+</code></pre>
+<p>Newly created files accounted for 19GB uncompressed.
+But note that it contained the data for all sensors,
+Because due to format it's not possible to easily id the lines related to light sensor with a pattern.</p>
+<p>Next I started putting all this CSV data into a sqlite folder,
+So I could SQL FU.</p>
+<pre><code>def write_df_to_db(db_name, df , name):
+    con = sqlite3.connect(db_name)
+    df.to_sql(name, con, if_exists='append')
+    con.close()
+
+def main():
+    file_paths = get_files_with_file_type_from_dir(DIR, &quot;csv&quot;)
+    total = len(file_paths)
+    for index, file_path in enumerate(file_paths):
+        print(&quot;{}/{}&quot;.format(index,total))
+        user_id = file_path.split('/')[-1].split('.')[0]
+        df = pandas.read_csv(file_path,
+                             delimiter=';',
+                             names=[&quot;index&quot;,&quot;unknown1&quot;,&quot;date&quot;,&quot;meta_data&quot;,&quot;data&quot;],
+                             parse_dates=[&quot;date&quot;],
+                             header=0,
+                             )
+        df[&quot;user_id&quot;]=user_id
+        write_df_to_db(join(DIR,DB_NAME), df, &quot;data3&quot;)
+</code></pre>
+<p>Above script took few hours to comple on my macbook.
+At the end I ended up with 30GB sqlite file.</p>
+<p>Even filtering with user ID took minutes to complete.
+So I indexed the user_id and meta data fields,
+since I'll be filtering data based on those fields.</p>
+<p>Well things improved.
+Now I can run queries like</p>
+<pre><code>select user_id, count(data) as num_of_screen_brightness_records, 
+count(distinct data) as num_of_screen_brightness_value_changes
+where meta_data LIKE '%screen|brightness|level%'
+group by user_id
+order by num_of_screen_brightness_value_changes desc;
+</code></pre>
+<p>in 3m 25s and get results like</p>
+<pre><code>user_id,num_of_screen_brightness_records,num_of_screen_brightness_value_changes
+94d27f1a97fc23c0255e105ab35c63d3e45baadb,61919,197
+3832e3c9c1bfe54b0031b3641a6444d011a4fa94,23280,187
+3ec0ba9b61d79e9f8747c51df2e459b05e1117fb,28047,182
+b20576340277b216a244501fa7b6e9b41f4a9931,11771,182
+14b5f728b3e8847947b1dac59e7ec23d5336d49c,36096,174
+aa0c9adaa2a99ec146efe87ad913e95543d6553d,16655,172
+1fb2f187a53cbac69509daa0b4f584ed6461459e,21576,169
+a6f47ae8f38af0cf2bd6db97a31497c1463eca10,20618,165
+478c3697919fd7ee5900f569741499bd44961631,27225,158
+7ab7b58411be191ee34dabf179bbf124c2018497,40280,141
+...
+</code></pre>
+<p>Well now to answer the important questions,</p>
+<p>(a) how often did people change their brightness setting? was it auto or manual?,</p>
+<p>Note : it was not possible to know (for sure)weather this is auto or manual,
+because those were recorded in the same time,
+meaning when T=x the brightness values is recorded and mode was recorded at T=y.
+If it's to plot the mode and value in same time line it might be possible to guess which mode is active at the change.</p>
+<pre><code>select * from 
+(SELECT  user_id, strftime( '%Y-%m-%d', date) as m_date,date,  
+count(data) as numOfDataPoints,count(distinct data) as numOfDifferentScreenBrightnessLevels, 
+min(data) as m_min, max(data) as m_max, max(data) - min(data) as range  
+from data3 
+where meta_data LIKE '%screen|brightness|level%' 
+GROUP by m_date, user_id) 
+where range &gt; 0 order by date
+</code></pre>
+<p>And here is sample visualization.
+<img src="/assets/screen_brightness.png" alt="full-width" /></p>
+<p>(b) how much did the ambience lux level vary over the day?</p>
+<p>TO BE CONTINUED ...</p>
+
+</article>
+
+</main>
+
+
+</body>
+</html>
