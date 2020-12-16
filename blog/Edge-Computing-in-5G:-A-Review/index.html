@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edge Computing in 5G: A Review - Kasun Gamlath</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+
+<body id="Edge-Computing-in-5G:-A-Review">
+
+<nav>
+<section>
+    <span class="home">
+        <a href="/">Home</a>
+    </span>
+    <span class="links">
+        <a href="/blog/">Blog</a>
+        <a href="/photos/">Photos</a>
+        <a href="/books.html">Books</a>
+    </span>
+</section>
+</nav>
+
+<main>
+<article>
+<h1><a href="/blog/Edge-Computing-in-5G:-A-Review/">Edge Computing in 5G: A Review</a></h1>
+<p class="meta">Published on 2020-12-15</p>
+<p>Edge computing enables 5G to bring cloud computing to near the end users.
+This in turn fixes the issues of traditional cloud - high latency, lack of security.</p>
+<p>Traditional cloud computing extends the computing/storage abilities of the user equipments(UEs).
+But fails when high quality of service(QoS) - low latency, hight throughput required.
+Edge servers in mini clouds are designed to address these QoS failures.</p>
+<h3>Background</h3>
+<h4>Requirements of 5G system</h4>
+<p>5G networks possesses 3 main new characteristics(compared to old generations)</p>
+<ol>
+<li>Massive amount of data get generated - due to increased number of mobile devices.</li>
+<li>Tight QoS requirements - due to high interactive applications.</li>
+<li>Heterogeneous environment support - due to diverse range of UEs.</li>
+</ol>
+<p>3 main technologies</p>
+<ol>
+<li>mmWave communication - 30-300GHz</li>
+<li>Small cells deployment - to reduce interference and transmission range.</li>
+<li>Massive multi-input multi-output (MIMO) - allows base stations (BSs) to use upto 16 antennas per sector to provide directional transmission.</li>
+</ol>
+<h4>Main characteristics of 5G data</h4>
+<ul>
+<li>Hard real-time - ie video streaming, gaming, healthcare services. Need to be handled in edge servers.</li>
+<li>Soft real-time - can tolerate latency upto some pre-defined limit. ie: intelligent traffic signal control system. Depending on latency requirement will chose where to be handled.</li>
+<li>Non-real-time - can be offloaded to remote cloud.</li>
+</ul>
+<h4>Significance of edge computing</h4>
+<ul>
+<li>Provide sub ms latency</li>
+<li>Reduce the energy consumption</li>
+</ul>
+<h4>4 Key requirements of edge computing in 5G</h4>
+<ol>
+<li>real-time interaction - remote surgery, tactile internet(internet network that combines ultra low latency with extremely high availability, reliability and security)</li>
+<li>local processing - reduce the traffic to core network</li>
+<li>high data rate - between user devices and edge clouds and between edge clouds and edge serves (embedded in the base station)</li>
+<li>hight availability</li>
+</ol>
+<h4>Applications of edge computing in 5G</h4>
+<ul>
+<li>Healthcare - remote surgery, diagnostics</li>
+<li>High bandwidth entertainment</li>
+<li>VR, AR and mixed reality</li>
+<li>Tactile internet (ultra-responsive and ultra-reliable network)</li>
+<li>URLLC(ultra reliable low latency communication) - high  reliability  between UEs specifically in M2M communications</li>
+<li>IoT</li>
+<li>Factories of the future</li>
+<li>Emergency response</li>
+<li>Intelligent transportation system - drivers share/gather information from traffic information centers in real-time manner to avoid accidents.</li>
+</ul>
+<h3>Taxonomy</h3>
+<h4>5 main objectives</h4>
+<ol>
+<li>Improving data management - large amounts with low latency</li>
+<li>Improve QoS</li>
+<li>Predicting network demand</li>
+<li>Managing location awareness - infer own locations for edge serves and track the location of UEs</li>
+<li>Improve resource management - to optimize resource utilization.</li>
+</ol>
+<h4>3 main computational platforms</h4>
+<ol>
+<li>Cloud computing</li>
+<li>Edge computing
+<ol>
+<li>Fog computing -  system-level horizontal architecture that distributes resources and services of computing,storage, control, and networking anywhere along the continuum from cloud to things</li>
+<li>MEC (mobile edge computing)</li>
+</ol>
+</li>
+<li>Hybrid</li>
+</ol>
+<h4>3 main attributes</h4>
+<ol>
+<li>Low latency and close proximity</li>
+<li>Location awareness</li>
+<li>Network context awareness</li>
+</ol>
+<h4>Use of 5G functions</h4>
+<ol>
+<li>Software-defined network - network architecture that separates a network into control and data planes to provide flexible and agile networks. Simplify network management</li>
+<li>Network function virtualization</li>
+<li>Massive MIMO</li>
+<li>Dynamic access to radio access technologies</li>
+<li>D2D communication - without passing through BS</li>
+</ol>
+<h4>Performance measures</h4>
+<ol>
+<li>Lower operational cost - by providing local functions</li>
+<li>Higher QoS - by providing local functions (same way it lowers operational cost)</li>
+<li>Energy efficiency - by providing local functions (same way it facilitates above two)</li>
+</ol>
+<h4>Role of edge computing in 5G</h4>
+<ol>
+<li>Local storage</li>
+<li>Local computation</li>
+<li>Local data analysis</li>
+<li>Local design making</li>
+<li>Local operation</li>
+<li>Local security enhancement</li>
+</ol>
+<h3>State of the art</h3>
+<h4>Fog based solutions</h4>
+<ul>
+<li>cross-layer resource management scheme is presented between optical network and fog computing over fiber networks - in order to incorporate delay requirements to edge servers. Improves QoS, resource management by providing local computation.</li>
+<li>an architecture that enables edge servers to provide caching, computing, and communications functions (also known as 3Cs) is proposed so that content and service providers can deploy their functions, services, and content closed to UEs.</li>
+</ul>
+<h4>MEC based solutions</h4>
+<ul>
+<li>architecture is presented to perform energy-aware offloading, whereby each mobile UE decides whether to per-form or offload computational tasks to MEC server, in order to reduce energy consumption of MEC</li>
+<li>MEC services are autonomously created by the nearest edge server in order to provide mobile UEs with seamless QoE in video streaming.</li>
+<li>D2D architecture is proposed for a mas-sive number of UEs to execute collaborative tasks in an energy-efficient manner.</li>
+<li>predictive and proactive caching approach is introduced in order to reduce peak traffic demands</li>
+<li>application-aware traffic redirection mechanism is proposed for MEC in order to reduce response time and bandwidth consumption.</li>
+<li>virtualized multi-access edge computing frame-work is proposed to increase available bandwidth and reduces end-to-end delay in an intelligent manner in Internet of things.</li>
+<li>fiber wireless (FiWi) access architecture is introduced to improve MEC services</li>
+<li>a group of vehicular neighboring nodes (or VNG)is dynamically managed using SDN to improve control over network and its resources in vehicular networks</li>
+<li>a non-standalone (i.e., disconnected from the Inter-net) MEC-based architecture is presented for mission-critical public safety services in order to achieve the delay requirement (i.e., less than 1 ms (ideal) or 10 ms (maximum) of round trip time) of 5G.</li>
+</ul>
+<h4>Hybrid solutions</h4>
+<ul>
+<li>D2D-based mobile edge and fog computing architecture is introduced to enable collaborative computing,which performs tasks in more than a single computing plat-forms or paradigms, in order to enhance MEC</li>
+<li>context-aware, real-time collaborative architecture is proposed to manage heterogeneous resources (e.g., different storage and computational capabilities in different computational platforms/ layers) at the edge of the net-work.</li>
+<li>real-time, context-aware, service-composition,and collaborative architecture is proposed to deliver fast composite service, which is the consolidation of multiple services supported by the collaboration of different hardware(e.g., UEs, edge clouds, and cloud) and software with different capabilities.</li>
+</ul>
+<h3>Open research issues</h3>
+<ul>
+<li>Service enhancement: QoE - challenge is to achieve a balanced trade-off between a) high availability - seamless connectivity b) higher QoE</li>
+<li>Standardization of protocols</li>
+<li>Addressing heterogeneity - Heterogeneity in communication (e.g., transmission range and data rate) and computing (e.g., hardware architecture and operating systems) technologies in edge computing for 5G has resulted in difficulties in developing a solution that is portable across different environment.</li>
+<li>Security and privacy - two main problems that can increase network vulnerability at the edge 1)dynamic environment causes the data and network requirements of different network entities to vary rapidly 2)increasing number of devices communicating with each other must require a scalable solution.</li>
+</ul>
+
+</article>
+
+</main>
+
+
+</body>
+</html>
