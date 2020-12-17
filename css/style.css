@@ -14,12 +14,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a:link, a:visited {
-    color: #0000e0;
+    /*color: #0000e0;*/
     text-decoration: none
 }
 
 a:hover, a:active {
-    color: #0000ff;
+    /*color: #0000ff;*/
     text-decoration: underline
 }
 
@@ -161,4 +161,11 @@ video {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+.index-date {
+    font-size: 90%;
+    font-style: italic;
+    float: left;
+    width: 100px;
 }
