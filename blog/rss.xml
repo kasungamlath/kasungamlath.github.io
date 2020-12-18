@@ -7,6 +7,19 @@
 <description>kasun gamlath personal site</description>
 
 <item>
+<title>bitcoin</title>
+<link>http://localhost:8008/blog/bitcoin/</link>
+<description>
+<![CDATA[
+<p>
+Transaction How to do a transaction get the hash of the previous transaction get the next owner's public key combine them together sign the combined&nbsp;<a href="http://localhost:8008/blog/bitcoin/">...</a>
+</p>
+<p><a href="http://localhost:8008/blog/bitcoin/">Read More</a></p>
+]]>
+</description>
+<pubDate>Fri, 18 Dec 2020 00:00:00 +0000</pubDate>
+</item>
+<item>
 <title>Running on 2020</title>
 <link>http://localhost:8008/blog/Running-on-2020/</link>
 <description>
