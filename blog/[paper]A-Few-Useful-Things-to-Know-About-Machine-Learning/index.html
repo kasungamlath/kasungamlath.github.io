@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>[paper]A Few Useful Things to Know About Machine Learning - Kasun Gamlath</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+
+<body id="[paper]A-Few-Useful-Things-to-Know-About-Machine-Learning">
+
+<nav>
+<section>
+    <span class="home">
+        <a href="/">Home</a>
+    </span>
+    <span class="links">
+        <a href="/blog/">Blog</a>
+        <a href="/photos/">Photos</a>
+        <a href="/books.html">Books</a>
+    </span>
+</section>
+</nav>
+
+<main>
+<article>
+<h1><a href="/blog/[paper]A-Few-Useful-Things-to-Know-About-Machine-Learning/">[paper]A Few Useful Things to Know About Machine Learning</a></h1>
+<p class="meta">Published on 2020-12-24</p>
+<p>Machine Learning has lots of folk wisdom, which acquired from doing it.
+This paper is trying to give explain some of that wisdom.</p>
+<h4>Learning = Representation + Evaluation + Optimization</h4>
+<p>All ML algorithms contain 3 components and 3 components only,</p>
+<ol>
+<li>
+<p>Representation
+Representation of the algorithm in a formal computer language. This is equally important as choosing the set of classifiers(hypothesis space) it can possibly learn.</p>
+</li>
+<li>
+<p>Evaluation
+Evaluation function is required to find the good classification from bad ones.</p>
+</li>
+<li>
+<p>Optimization
+Search the classifiers to find the best scoring one.</p>
+</li>
+</ol>
+<h4>It's Generalization that Counts</h4>
+<p>Generalization is important because it's impossible to have all the possibilities at the training time. It's required to divide the data in a meaningful way to do the train and test. Else not possible to achieve generalization.</p>
+<h4>Data alone is not enough</h4>
+<p>Even though ML is data driven technique, a domain knowledge is also required. Mainly because it's not possible have enough data to represent all the outcomes.</p>
+<h4>Overfitting has many faces</h4>
+<p>Overfitting is failure to generalize. Optimum is to have a low bias, low variance model. Cross-validation can help to avoid overfitting.</p>
+<h4>Intuition fails in high dimensions</h4>
+<p>As the number of dimensions grow it becomes exponentially  harder to generalize.</p>
+<h4>Theoretical guarantees are not what they seem</h4>
+<p>ML is induction. So unlike in deduction, there is no guarantee the conclusion is correct. Just because a learner has theoretical justification and works doesn't mean the justification is the reason for it to work.</p>
+<h4>Feature engineering is the key</h4>
+<p>Learning is easy when there are many independent features that correlate well with the class. So selecting correct features is important. It requires domain knowledge for this.</p>
+<h4>More data beats a cleverer algorithm</h4>
+<p>Even when the feature set is finalized, if the model is not working, there are 2 possibilities to try. 1)add more data. 2)design a better algorithm. Doing the former is easier.</p>
+<h4>Learn many models, not just one</h4>
+<p>Instead of selecting the best model, combining many variation often works better. And this is different for Bayesian model averaging.</p>
+<h4>Simplicity does not imply accuracy</h4>
+<p>There is no connection between number of parameters in the model and its tendency to overfit.</p>
+<h4>Representable does not imply learnable</h4>
+<p>More important question is can it be learnable.</p>
+<h4>Correlation does not imply causation</h4>
+<p>ML is applied to observational data. Though some learning algorithms can potentially extract causal information for observational data, their applicability is rather restricted. Treating the correlation as a sign of potential connection is the way to go.</p>
+
+</article>
+
+</main>
+
+
+</body>
+</html>
