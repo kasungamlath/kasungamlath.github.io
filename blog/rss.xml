@@ -7,6 +7,19 @@
 <description>kasun gamlath personal site</description>
 
 <item>
+<title>Training for the 3rd Half Marathon</title>
+<link>http://localhost:8008/blog/Training-for-the-3rd-Half-Marathon/</link>
+<description>
+<![CDATA[
+<p>
+I'm planning to run my 3rd half marathon this December. This is the third time and it's a &quot;real&quot;/in-person race. Last two times were virtual&nbsp;<a href="http://localhost:8008/blog/Training-for-the-3rd-Half-Marathon/">...</a>
+</p>
+<p><a href="http://localhost:8008/blog/Training-for-the-3rd-Half-Marathon/">Read More</a></p>
+]]>
+</description>
+<pubDate>Thu, 22 Sep 2022 00:00:00 +0000</pubDate>
+</item>
+<item>
 <title>Measuring Energy Usage on Jetson Products</title>
 <link>http://localhost:8008/blog/Measuring-Energy-Usage-on-Jetson-Products/</link>
 <description>
@@ -293,14 +306,14 @@ I'm working on building a testbed to evaluate some hypothesis related to a smart
 <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
 </item>
 <item>
-<title>[book]Ship of the Line</title>
-<link>http://localhost:8008/blog/[book]Ship-of-the-Line/</link>
+<title>[book]Commodore Hornblower</title>
+<link>http://localhost:8008/blog/[book]Commodore-Hornblower/</link>
 <description>
 <![CDATA[
 <p>
-Hornblower gets a ship of the line in a fleat who's supposed to provide protection for a bunch of merchant fleats. As it happens the&nbsp;<a href="http://localhost:8008/blog/[book]Ship-of-the-Line/">...</a>
+Hornblower sails to Baltic with now Captain bush and few of ships under his command to persuade Russians to support England and fight with French.&nbsp;<a href="http://localhost:8008/blog/[book]Commodore-Hornblower/">...</a>
 </p>
-<p><a href="http://localhost:8008/blog/[book]Ship-of-the-Line/">Read More</a></p>
+<p><a href="http://localhost:8008/blog/[book]Commodore-Hornblower/">Read More</a></p>
 ]]>
 </description>
 <pubDate>Mon, 10 Aug 2020 00:00:00 +0000</pubDate>
@@ -319,14 +332,14 @@ This is the story of Hornblower's escape from French prison. With the support fr
 <pubDate>Mon, 10 Aug 2020 00:00:00 +0000</pubDate>
 </item>
 <item>
-<title>[book]Commodore Hornblower</title>
-<link>http://localhost:8008/blog/[book]Commodore-Hornblower/</link>
+<title>[book]Ship of the Line</title>
+<link>http://localhost:8008/blog/[book]Ship-of-the-Line/</link>
 <description>
 <![CDATA[
 <p>
-Hornblower sails to Baltic with now Captain bush and few of ships under his command to persuade Russians to support England and fight with French.&nbsp;<a href="http://localhost:8008/blog/[book]Commodore-Hornblower/">...</a>
+Hornblower gets a ship of the line in a fleat who's supposed to provide protection for a bunch of merchant fleats. As it happens the&nbsp;<a href="http://localhost:8008/blog/[book]Ship-of-the-Line/">...</a>
 </p>
-<p><a href="http://localhost:8008/blog/[book]Commodore-Hornblower/">Read More</a></p>
+<p><a href="http://localhost:8008/blog/[book]Ship-of-the-Line/">Read More</a></p>
 ]]>
 </description>
 <pubDate>Mon, 10 Aug 2020 00:00:00 +0000</pubDate>
@@ -605,19 +618,6 @@ My phone is a Xiaomi mi A2. I Specially bought this model because I was in love 
 <pubDate>Wed, 20 May 2020 00:00:00 +0000</pubDate>
 </item>
 <item>
-<title>On Automating a Lux Meter Reading</title>
-<link>http://localhost:8008/blog/On-Automating-a-Lux-Meter-Reading/</link>
-<description>
-<![CDATA[
-<p>
-A requirement came up for a project I've been working on recently to continuosly collect lux values+images on certain surfaces. Since the data collection needed&nbsp;<a href="http://localhost:8008/blog/On-Automating-a-Lux-Meter-Reading/">...</a>
-</p>
-<p><a href="http://localhost:8008/blog/On-Automating-a-Lux-Meter-Reading/">Read More</a></p>
-]]>
-</description>
-<pubDate>Wed, 25 Mar 2020 00:00:00 +0000</pubDate>
-</item>
-<item>
 <title>Detecting luminance level of a room using CCTV camera feed</title>
 <link>http://localhost:8008/blog/Detecting-luminance-level-of-a-room-using-CCTV-camera-feed/</link>
 <description>
@@ -626,6 +626,19 @@ A requirement came up for a project I've been working on recently to continuosly
 NOTE :Work in Progress Recently I started working on a new research project. Goal of this project is to find a relationship between luminance value&nbsp;<a href="http://localhost:8008/blog/Detecting-luminance-level-of-a-room-using-CCTV-camera-feed/">...</a>
 </p>
 <p><a href="http://localhost:8008/blog/Detecting-luminance-level-of-a-room-using-CCTV-camera-feed/">Read More</a></p>
+]]>
+</description>
+<pubDate>Wed, 25 Mar 2020 00:00:00 +0000</pubDate>
+</item>
+<item>
+<title>On Automating a Lux Meter Reading</title>
+<link>http://localhost:8008/blog/On-Automating-a-Lux-Meter-Reading/</link>
+<description>
+<![CDATA[
+<p>
+A requirement came up for a project I've been working on recently to continuosly collect lux values+images on certain surfaces. Since the data collection needed&nbsp;<a href="http://localhost:8008/blog/On-Automating-a-Lux-Meter-Reading/">...</a>
+</p>
+<p><a href="http://localhost:8008/blog/On-Automating-a-Lux-Meter-Reading/">Read More</a></p>
 ]]>
 </description>
 <pubDate>Wed, 25 Mar 2020 00:00:00 +0000</pubDate>
@@ -735,6 +748,19 @@ Between writing a service to report the location and providing offline search I 
 <pubDate>Sat, 01 Aug 2015 00:00:00 +0000</pubDate>
 </item>
 <item>
+<title>Dimple Hacker News Reader</title>
+<link>http://localhost:8008/blog/Dimple-Hacker-News-Reader/</link>
+<description>
+<![CDATA[
+<p>
+In the same after exam break that I changed the TrainBuddy (my other android app)'s visual design, I made some changes to Hacker News reader.(&nbsp;<a href="http://localhost:8008/blog/Dimple-Hacker-News-Reader/">...</a>
+</p>
+<p><a href="http://localhost:8008/blog/Dimple-Hacker-News-Reader/">Read More</a></p>
+]]>
+</description>
+<pubDate>Fri, 24 Jul 2015 00:00:00 +0000</pubDate>
+</item>
+<item>
 <title>TrainBuddy New Look</title>
 <link>http://localhost:8008/blog/TrainBuddy-New-Look/</link>
 <description>
@@ -756,19 +782,6 @@ After the semester exams I got an break for few weeks. So I took that time to do
 Few weeks ago I came to know about this cool feature of wireless ADB (Android Debug Bridge). Following method doesn't need root access to device.&nbsp;<a href="http://localhost:8008/blog/Android-Wireless-Debugging/">...</a>
 </p>
 <p><a href="http://localhost:8008/blog/Android-Wireless-Debugging/">Read More</a></p>
-]]>
-</description>
-<pubDate>Fri, 24 Jul 2015 00:00:00 +0000</pubDate>
-</item>
-<item>
-<title>Dimple Hacker News Reader</title>
-<link>http://localhost:8008/blog/Dimple-Hacker-News-Reader/</link>
-<description>
-<![CDATA[
-<p>
-In the same after exam break that I changed the TrainBuddy (my other android app)'s visual design, I made some changes to Hacker News reader.(&nbsp;<a href="http://localhost:8008/blog/Dimple-Hacker-News-Reader/">...</a>
-</p>
-<p><a href="http://localhost:8008/blog/Dimple-Hacker-News-Reader/">Read More</a></p>
 ]]>
 </description>
 <pubDate>Fri, 24 Jul 2015 00:00:00 +0000</pubDate>
