@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Haar cascade Detection for License Plates with OpenCV - Kasun Gamlath</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+
+<body id="Haar-cascade-Detection-for-License-Plates-with-OpenCV">
+
+<nav>
+<section>
+    <span class="home">
+        <a href="/">Home</a>
+    </span>
+    <span class="links">
+        <a href="/blog/">Blog</a>
+        <a href="/photos/">Photos</a>
+        <a href="/books.html">Books</a>
+        <a href="/papers.html">Papers</a>
+    </span>
+</section>
+</nav>
+
+<main>
+<article>
+<h1><a href="/blog/Haar-cascade-Detection-for-License-Plates-with-OpenCV/">Haar cascade Detection for License Plates with OpenCV</a></h1>
+<p class="meta">Published on 2022-09-23</p>
+<p>Recently I needed to detect license plates in a power efficient way.
+Object detection using Haar feature based cascade classifiers,
+is proposed by Paul Viola and Michael Jones in there paper &quot;Rapid Object Detection using a Boosted Cascade of Simple Features&quot; in 2001.
+It's a power efficient machine learning model.</p>
+<p>Training Haar feature based model involve bunch of positive images (in our case images with license plates) and negative images (images without license plates).
+<a href="https://docs.opencv.org/3.4/dc/d88/tutorial_traincascade.html">here</a> is nice tutorial on training the model.</p>
+<p>For our case we didn't need to train a model.
+OpenCV comes with few already trained <a href="https://github.com/opencv/opencv/tree/master/data/haarcascades">models</a>.
+Two of them are for detecting number plates.
+I tried both of them on our dataset and chose the best performing one.
+It managed to detect about 10-15% of license plates on our <a href="https://github.com/kpgx/benchmarks/tree/master/endtoend/us">dataset</a>.</p>
+<p>Sample images - both positive and negative detections,</p>
+<p><img src="/assets/haar/car0.jpg" alt="" /></p>
+<p><img src="/assets/haar/car1.jpg" alt="" /></p>
+<p><img src="/assets/haar/car2.jpg" alt="" /></p>
+<p><img src="/assets/haar/car3.jpg" alt="" /></p>
+<p><img src="/assets/haar/car4.jpg" alt="" /></p>
+<p><img src="/assets/haar/car5.jpg" alt="" /></p>
+
+</article>
+
+</main>
+
+
+</body>
+</html>
