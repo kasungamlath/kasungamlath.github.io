@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TrainBuddy New Look - Kasun Gamlath</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <script data-goatcounter="https://kasun.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+    <noscript>
+    	<img src="https://MYCODE.goatcounter.com/count?p=/test-noscript">
+    </noscript>
+</head>
+
+<body id="TrainBuddy-New-Look">
+
+<nav>
+<section>
+    <span class="home">
+        <a href="/">Home</a>
+    </span>
+    <span class="links">
+        <a href="/blog/">Blog</a>
+        <a href="/photos/">Photos</a>
+        <a href="/books.html">Book List</a>
+        <!-- <a href="/projects.html">Projects</a> -->
+    </span>
+</section>
+</nav>
+
+<main>
+<article>
+<h1><a href="/blog/TrainBuddy-New-Look/">TrainBuddy New Look</a></h1>
+<p class="meta">Published on 2015-07-24</p>
+<p>After the semester exams I got an break for few weeks. So I took that time to do a thing I wanted to do for a while now.</p>
+<p>TrainBuddy was already looking nice. It's already the best looking kid in the block of train schedule apps (in my opinion). But that doesn't mean It can't look nicer. So I took some time, read google design guides, checked the new support library and made some changes.</p>
+<p>There are few notable changes.</p>
+<p>1.Navigational view.</p>
+<p>The previous way of navigating (using the spinner) was kind of looked out of place, provided I needed add few options to the user (more options on the way). So the navigational view was the right choice. So with the support of android support library I added a navigational view to the app. Adding this was harder than I thought. Mainly because the use of One activity architecture. So I had to manually handle all the fragment transitions. So though the code is now full of hacks it works.</p>
+<p><img src="/assets/trainBuddy_new_look/navigation_new.png" alt="" /></p>
+<p>2.Typography in input providing view.</p>
+<p>With the navigational view following the google design guidelines now the input providing view looked alien. I tried adding few icons. But it didn't jell. So ended up changing the typography. And the new swap button has a icon now.</p>
+<p><img src="/assets/trainBuddy_new_look/user_in_new.png" alt="" /></p>
+<p>3.Result view layout and emission of journey detail view.(RIP detail view)</p>
+<p>Here in list items I tried to get the look and feel of google inbox application. Also added the frequency and class availability to the list item. I also added the journey details to the result list view. because there isn't much additional detail to view in a separate view after adding the frequency and class availability to the list item. And also journey detail is same for all the results per query. And the journey detail view was ugly and I couldn't think of a way to fix it.</p>
+<p>Another notable thing here is the view at the top of the window. Though it looks like the action bar it isn't. It's a linear layout with a navigation button. It's because I couldn't find a way to change the action bar layout for only one fragment. I was trying to add a collapsing toolbar here. But couldn't find a way without changing the application architecture. I think the reason is the one activity architecture as I explained in previous post.</p>
+<p><img src="/assets/trainBuddy_new_look/result_list_new.png" alt="" /></p>
+<p>4.Addition of help &amp; feedback view.</p>
+<p>Since the list item layout got little complex here I added some explanations about it and provided means for users to contact the developer(that's me ;)) through the application. Also added a link to rate the application.</p>
+<p><img src="/assets/trainBuddy_new_look/help.png" alt="" /></p>
+<p>Sadly I had to set the minimum Sdk level to 14 since some of the features are not available below sdk level 14. So this version will only be available for devices with ICS (Ice Cream Sandwich) and above.</p>
+<p>All these changes are available for beta users now. If you are not a beta user yet join <a href="https://plus.google.com/communities/111728508620143036732">here</a> and enjoy the new look. Non beta users will have to wait some time for the new release since there are few minor bugs to iron out.</p>
+<p>If you haven't try TrainBuddy yet get it from the <a href="https://play.google.com/store/apps/details?id=com.kasungamlath.trainbuddy">Google play</a></p>
+<p>Happy commuting !!!</p>
+<p>UPDATE(28 July 2015) :Now available for all the users.</p>
+
+</article>
+
+</main>
+
+
+</body>
+</html>

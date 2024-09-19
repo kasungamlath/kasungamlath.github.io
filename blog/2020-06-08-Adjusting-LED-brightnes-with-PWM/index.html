@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Adjusting LED brightnes with PWM - Kasun Gamlath</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <script data-goatcounter="https://kasun.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+    <noscript>
+    	<img src="https://MYCODE.goatcounter.com/count?p=/test-noscript">
+    </noscript>
+</head>
+
+<body id="Adjusting-LED-brightnes-with-PWM">
+
+<nav>
+<section>
+    <span class="home">
+        <a href="/">Home</a>
+    </span>
+    <span class="links">
+        <a href="/blog/">Blog</a>
+        <a href="/photos/">Photos</a>
+        <a href="/books.html">Book List</a>
+        <!-- <a href="/projects.html">Projects</a> -->
+    </span>
+</section>
+</nav>
+
+<main>
+<article>
+<h1><a href="/blog/Adjusting-LED-brightnes-with-PWM/">Adjusting LED brightnes with PWM</a></h1>
+<p class="meta">Published on 2020-06-08</p>
+<p>Following the my adventure with capturing the RF signal with IR sensor,
+I had two ways to proceed.
+Go back to the shop and buy RF sensor.
+But the community cases(covid19) of Singapore is getting high again.
+Didn't feel like going out.</p>
+<p>Thankfully there is another way to adjust the brightness of a LED.
+Pulse width modulation.
+I had a hunch that's how the existing light adjustments worked too(via RF remote)
+And I already have the necessary circuit items with me.</p>
+<p>Adjusting the LED brightness via raspberry pi part 2.</p>
+<p>Even though the end goal is to adjust the brightness of LED set with external power source, I set up to adjust the brightness of a single LED powered via raspberry pi GPIO pin it selt.</p>
+<p>I configured the new circuit in bread board.
+It was just one resistor and one LED connected with jumping wires to GPIO pins.</p>
+<p>It worked the first time!!!</p>
+<p><video controls><source src="/assets/led_pwm.mp4" type="video/mp4">Your browser does not support the video tag.</video></p>
+<p>Now for the complex circuit with external power source.
+(One LED is a poor application when come to lighting a room)
+Configured the circuit.
+Plugged one unit of LEDs we bought early.</p>
+<p>And nothing happened!!!
+Well I am in a familiar ground again.</p>
+<p>Had a hard look at the circuit.
+Looked for the pin layouts.
+Found out my knowledge of transistors are only valid for some simpler dimension.
+It's totally different when it comes to PNP and NPN!!!</p>
+<p>Rewired the circuit.</p>
+<p><img src="/assets/pwm_ex.jpg" alt="full-width" /></p>
+<p>Nope.
+Seems the transistor pin layout was not the only issue.</p>
+<p>I started the <a href="http://abyz.me.uk/rpi/pigpio/piscope.html">piscope</a>(It gives a live graph of GPIO volt levels)
+Well there is a problem there.
+It's not showing the volt level changes for the pin which circuit was connected.</p>
+<p>I changed the GPIO pin.
+Updated the script.
+Executed it.</p>
+<p>Houston, we have landed!!!</p>
+<p>At first configurations I was using software GPIO and it was showing some jitters in the light.
+That's because the Linux is not a real time OS and it uses scheduling technique to operate in multi process environment.
+So when come to sending signals via GPIO in a high frequency it's possible to miss some due to scheduling.</p>
+<p>But the raspberry pi is capable with hardware PWM and i found a nice <a href="http://abyz.me.uk/rpi/pigpio/">library</a> with python interface.
+It mentioned there are few GPIO pins which are capable driving hardware PWM.
+I tried with GPIO pin 18 and it worked.</p>
+<p>With PWM it adjust the brightness by changing the duty cycle(in 50% duty cycle, one half of it is in hight volt state and other half is in low state, 75% is 3/4 in high and 1/4 in low)
+Also you can change the frequency. It defines how long is a duty cycle(high+low) in time dimension.</p>
+<p>With low frequencies(~sub 100Hz) the blinking is visible to naked eye.
+When it increases(~100Hz - 1kHz) it's become invisible to naked eye but can be seen from camera.
+This the frequency range being used by the frequency in embedded circuit the LED set came with.</p>
+<p>Bellow is a video recording(high frame rate) of the LED brightness being adjusted via circuit it came with.</p>
+<p><video controls><source src="/assets/led_blink.mp4" type="video/mp4">Your browser does not support the video tag.</video></p>
+<p>But it's possible to further increase(more than 1kHz) the PWM frequency and hide the blinking from even hight frame rate camera captures.
+Upper bound for raspberry pi hardware PWM is ~20Mhz.
+I checked with a slow mo video from an iPhone SE 2020, with high frequency camera didn't see any blinking.</p>
+<p><video controls><source src="/assets/led_no_blink.mp4" type="video/mp4">Your browser does not support the video tag.</video></p>
+<p>Well that's it for adjusting the LED brightness with raspberry pi.</p>
+
+</article>
+
+</main>
+
+
+</body>
+</html>

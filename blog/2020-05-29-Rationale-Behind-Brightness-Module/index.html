@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rationale Behind Brightness Module - Kasun Gamlath</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <script data-goatcounter="https://kasun.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+    <noscript>
+    	<img src="https://MYCODE.goatcounter.com/count?p=/test-noscript">
+    </noscript>
+</head>
+
+<body id="Rationale-Behind-Brightness-Module">
+
+<nav>
+<section>
+    <span class="home">
+        <a href="/">Home</a>
+    </span>
+    <span class="links">
+        <a href="/blog/">Blog</a>
+        <a href="/photos/">Photos</a>
+        <a href="/books.html">Book List</a>
+        <!-- <a href="/projects.html">Projects</a> -->
+    </span>
+</section>
+</nav>
+
+<main>
+<article>
+<h1><a href="/blog/Rationale-Behind-Brightness-Module/">Rationale Behind Brightness Module</a></h1>
+<p class="meta">Published on 2020-05-29</p>
+<p>The research project I'm working on these days is suppose to make a building smart.
+It should know it's occupants whereabouts and have to adjust energy related parameters(light level, AC level, etc) accordingly.
+For example if there are 3 people occupying a 1 desk in a big room with 25 desks, it should keep lights in workable level only around the occupied desk.
+The ultimate goal is reducing the energy consumption while keeping occupants happy.</p>
+<p>In order to optimally adjust the lights building should also have a sense of the brightness of the affecting area.
+Else there a chance to wrongfully adjust the lights and be a dumb building.</p>
+<p>We already have a dockerized system to detect the occupancy of the building.
+And we have promising results for the brightness detection too(fingers crossed).
+So I am designing a new docker service to integrate this brightness detection to that existing system.</p>
+<p>The responsibilities of the module are,</p>
+<ol>
+<li>access each cameras feed</li>
+<li>detect the brightness of each scene</li>
+<li>write that values to a database.</li>
+</ol>
+<p>Then another service will read this brightness value and the occupancy values(output of another module) and adjust the buildings AC and lights.</p>
+<p>To do this first we have to access the camera feed.
+There are about 50 cameras in the building.
+We are using opencv library VidoeCapture method for that.
+Since it's a blocking call and a expensive at that, module will have one thread to decode each camera feed.
+Then since detection of brightness is also comparatively a expensive operation there will be one brightness calculating thread for each camera.
+All this calculated brightness values will go for a single queue and a single database thread will write all these values to DB.</p>
+<p>That's the design at the start and based on metrics it will be adjusted.
+After all <em>premature optimization is the root of all evil</em>.</p>
+
+</article>
+
+</main>
+
+
+</body>
+</html>

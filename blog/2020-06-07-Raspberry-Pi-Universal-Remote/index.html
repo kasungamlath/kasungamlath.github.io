@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Raspberry Pi Universal Remote - Kasun Gamlath</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <script data-goatcounter="https://kasun.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+    <noscript>
+    	<img src="https://MYCODE.goatcounter.com/count?p=/test-noscript">
+    </noscript>
+</head>
+
+<body id="Raspberry-Pi-Universal-Remote">
+
+<nav>
+<section>
+    <span class="home">
+        <a href="/">Home</a>
+    </span>
+    <span class="links">
+        <a href="/blog/">Blog</a>
+        <a href="/photos/">Photos</a>
+        <a href="/books.html">Book List</a>
+        <!-- <a href="/projects.html">Projects</a> -->
+    </span>
+</section>
+</nav>
+
+<main>
+<article>
+<h1><a href="/blog/Raspberry-Pi-Universal-Remote/">Raspberry Pi Universal Remote</a></h1>
+<p class="meta">Published on 2020-06-07</p>
+<p>I was working for a Smart light project for a while now.
+Goal of this project is to provide optimal brightness for occupancies in a room while saving the energy.
+This project is going to be setup in a campus building.
+But we still don't have the access to the building infrastructure yet.
+So we were setting up a test bed in a campus lab.</p>
+<p>Then came covid19.</p>
+<p>We had to move to work from home.
+To continue the work it's required to adjust the lights in the campus lab from home.
+Since we won't have any access to already installed lights in the lab,
+we bought were brightness adjustable generic led lights.
+Their marketing term was kitchen counter lights.
+They came with a remote.
+To operate you have to be there in person.</p>
+<p>But our requirement is to change the lab lights from home.</p>
+<p>We come up with two ideas.</p>
+<ol>
+<li>Use the existing remote interface of the lights and use a raspberry pi with IR emitter as a trigger.</li>
+<li>Use PWM with raspberry pi to control the LED brightness.</li>
+</ol>
+<p>Since the first idea looked less complex we set out to try it first.
+Following it the high level plan.</p>
+<ol>
+<li>Setup a receiver with raspberry pi.</li>
+<li>Recode the signals from the remote to the raspberry pi.</li>
+<li>Setup a emitter with raspberry pi.</li>
+<li>Replay the signals to lights.</li>
+<li>Setup the raspberry pi in the test bed.</li>
+</ol>
+<p>So I searched about it found some guides.</p>
+<p>Well I think I should also mention that,
+Last time I did something electronic is like 15 years ago when I made a Knignt Rider circuit.
+Which was array of LEDs blinking for the pattern as same as the car(kit) in Knight Rider TV series.
+(That circuit was pretty famous those days)</p>
+<p>Back to present,
+I bought the items required.
+<img src="/assets/circuit_items.jpg" alt="full-width" /></p>
+<p>Came home plugged them to raspberry pi using bread board.
+Configure the software.
+(That was more complex than setting up the circuit.)
+Pointed the remote to the sensor and pushed few buttons.</p>
+<p>Nothing happened!!!
+It was supposed to display the signals.</p>
+<p>Well It's simple circuit.
+An IR receiver plugged in to raspberry pi.</p>
+<p>I started digging around and found there was a Kernel update few months ago which replaced the kernel module mentioned in the guide.
+Well, that's not too hard to fix.
+Downgrade the OS in raspberry pi to a version with early kernel version and start from the beginning.</p>
+<p>So I removed the memory card from raspberry pi and flashed it with a early version of OS image.
+Inserted the chip to raspberry pi and turned on the power.</p>
+<p>Pi refused to boot!!!
+Green LED was flashing to a pattern.
+As it happened the OS image was too old to work with the device.</p>
+<p>Downloaded a fairly new OS image.
+Flashed the chip again.
+Started the raspberry pi.</p>
+<p>It started.
+But that's the end of the good news.</p>
+<p>I configured the software stack as per the guide.
+But still not getting the signals from remote.
+And I was stuck now.
+Don't know what part is not working.
+It could be,</p>
+<ol>
+<li>Faulty receiver</li>
+<li>Faulty wiring</li>
+<li>Library not working</li>
+<li>Or something completely unrelated.</li>
+</ol>
+<p>I don't have any experience with these stuff.
+Don't know the tools of the trade.</p>
+<p>How does one debug these stuff?</p>
+<p>Well internet is a wonderful thing.
+I found a nice tool called piscope.
+It displays a voltages from GPIO pins in a live graph.
+So I could use it for eliminate some possible issue candidates.</p>
+<p>I downloaded it, build it, installed.</p>
+<p>Well no luck.
+Graph isn't showing any action.</p>
+<p>Now what.
+I'm running out of ideas here.</p>
+<p>Wait may be it's the remote.
+I tried the AC remote.</p>
+<p>Voila,
+Graph came live.</p>
+<p>Well Well Well,
+As it turns out I was trying to capture a RF signal from a IR receiver.
+(Remote came with a RF remote and I bought a IR sensor.)</p>
+<p>I guess now I can make a smart AC...</p>
+<p>Bellow are the guides I followed if you are interested,</p>
+<p>lirc guide</p>
+<p><a href="https://gist.github.com%5B2%5E/prasanthj/c15a5298eb682b%5B2%5Ede34961c322c95378b">https://gist.github.com[2^/prasanthj/c15a5298eb682b[2^de34961c322c95378b</a></p>
+<p>hardware guide</p>
+<p><a href="https://www.hackster.io/austin-stanton/creating-a-raspberry-pi-universal-remote-with-lirc-2fd581">https://www.hackster.io/austin-stanton/creating-a-raspberry-pi-universal-remote-with-lirc-2fd581</a></p>
+<p>lirc guide for strech/buster</p>
+<p><a href="https://www.raspberrypi.org/forums/viewtopic.php?f=28&amp;t=235256">https://www.raspberrypi.org/forums/viewtopic.php?f=28&amp;t=235256</a></p>
+
+</article>
+
+</main>
+
+
+</body>
+</html>

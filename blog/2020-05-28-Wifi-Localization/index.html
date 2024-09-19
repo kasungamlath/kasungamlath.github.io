@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wifi Localization - Kasun Gamlath</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <script data-goatcounter="https://kasun.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+    <noscript>
+    	<img src="https://MYCODE.goatcounter.com/count?p=/test-noscript">
+    </noscript>
+</head>
+
+<body id="Wifi-Localization">
+
+<nav>
+<section>
+    <span class="home">
+        <a href="/">Home</a>
+    </span>
+    <span class="links">
+        <a href="/blog/">Blog</a>
+        <a href="/photos/">Photos</a>
+        <a href="/books.html">Book List</a>
+        <!-- <a href="/projects.html">Projects</a> -->
+    </span>
+</section>
+</nav>
+
+<main>
+<article>
+<h1><a href="/blog/Wifi-Localization/">Wifi Localization</a></h1>
+<p class="meta">Published on 2020-05-28</p>
+<p>Wifi localization work more or less like localization with GPS.
+Instead of GPS satellites it uses wifi access points.
+Instead of GPS receivers it uses wifi modules(is found on any device with wifi).</p>
+<p>Wifi access points can get a measurement for signal strength of the device relative the access point.
+These measurements are read periodically for each device.
+It's supposed to help with the quality control.
+Lower the signal strength harder it becomes to communicate with the device.
+So it's required to measure the load the access point is working on.
+Once it passes certain threshold quality control can kicks in make necessary decisions like kicking out far out devices, stop accepting new devices and such.
+These measurements can be accessed from a central location.</p>
+<p>This signal strength has a relationship with the distance.
+It requires at least 3 access points to successfully determine a location of a wifi module.
+So once it find where the device is in a signal strength space it can be converted to spatial space.</p>
+<p>But of course once it detects a location, it's relative to wifi access point network.
+It doesn't have mush application value.
+It needs to be converted to a real world location.
+The particular implementation I've worked with has a fingerprinting phase to achieve this.</p>
+<p>In the beginning it marks up bunch of landmarks to cover the area where the localization needs to be done.
+Then for all these landmarks, using number of (in the same build/model) devices it measures the signal strength relative to each access points it can reach it to.
+This is possible since from the central location all the access point signal measurements can be accessed and they carry the device Wifi MAC address with each these signal measurement.
+Once this is completed a fingerprint map is said to be built.</p>
+<p>Now it's possible to find the device locations compared to the used landmarks.
+At the central location it builds another signal strength map to each device which is visible to wifi network.
+Then using the previously built fingerprint map it finds the nearest land mark for each of them.Thus it can approximately say where the each device is.</p>
+
+</article>
+
+</main>
+
+
+</body>
+</html>

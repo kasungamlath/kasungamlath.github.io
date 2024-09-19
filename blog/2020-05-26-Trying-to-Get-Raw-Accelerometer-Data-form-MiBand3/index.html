@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trying to Get Raw Accelerometer Data form MiBand3 - Kasun Gamlath</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <script data-goatcounter="https://kasun.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+    <noscript>
+    	<img src="https://MYCODE.goatcounter.com/count?p=/test-noscript">
+    </noscript>
+</head>
+
+<body id="Trying-to-Get-Raw-Accelerometer-Data-form-MiBand3">
+
+<nav>
+<section>
+    <span class="home">
+        <a href="/">Home</a>
+    </span>
+    <span class="links">
+        <a href="/blog/">Blog</a>
+        <a href="/photos/">Photos</a>
+        <a href="/books.html">Book List</a>
+        <!-- <a href="/projects.html">Projects</a> -->
+    </span>
+</section>
+</nav>
+
+<main>
+<article>
+<h1><a href="/blog/Trying-to-Get-Raw-Accelerometer-Data-form-MiBand3/">Trying to Get Raw Accelerometer Data form MiBand3</a></h1>
+<p class="meta">Published on 2020-05-26</p>
+<p>As I have being running more frequently now I felt a need to log those runs.
+So I could see the progress.
+My plan was to record the acceleration through out the running session and since it enables to see speed variations.
+But to record the acceleration I need to carry a accelerometer on the run.
+I'm hesitant to carry a mobile phone because it felts a hindrance to running.</p>
+<p>I burrowed a MiBand3 from a friend and gave it a try last weekend.
+Problem was via the official app it only outputs the step count.
+Band uses the accelerometer data and produces the step count.
+I found a <a href="https://medium.com/machine-learning-world/how-i-hacked-xiaomi-miband-2-to-control-it-from-linux-a5bd2f36d3ad">blog post</a> (with the link to source code) about the getting the raw accelerometer data(real time) from a MiBand2.
+I setup the project and following another <a href="https://medium.com/@yogeshojha/i-hacked-xiaomi-miband-3-and-here-is-how-i-did-it-43d68c272391">blog post</a> changed the authentication steps and managed to connect to MiBand3 from a rapberry pi.
+But unfortunately the mentioned raw accelerometer data retrieval part didn't work for the MiBand3.
+I could only get the step count and the heart rate from the band to raspberry pi.</p>
+<p>I looked for some other bands on the internet with the access to raw accelerometer data but couldn't find any.
+It seems in order to get a wearable device which produces the raw data I'll have to buy a at least midrange smart watch.</p>
+<p>Or find a way to change the firmware of miband to store+return raw accelerometer data...</p>
+
+</article>
+
+</main>
+
+
+</body>
+</html>

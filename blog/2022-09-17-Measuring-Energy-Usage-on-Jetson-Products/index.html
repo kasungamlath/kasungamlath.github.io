@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Measuring Energy Usage on Jetson Products - Kasun Gamlath</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <script data-goatcounter="https://kasun.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+    <noscript>
+    	<img src="https://MYCODE.goatcounter.com/count?p=/test-noscript">
+    </noscript>
+</head>
+
+<body id="Measuring-Energy-Usage-on-Jetson-Products">
+
+<nav>
+<section>
+    <span class="home">
+        <a href="/">Home</a>
+    </span>
+    <span class="links">
+        <a href="/blog/">Blog</a>
+        <a href="/photos/">Photos</a>
+        <a href="/books.html">Book List</a>
+        <!-- <a href="/projects.html">Projects</a> -->
+    </span>
+</section>
+</nav>
+
+<main>
+<article>
+<h1><a href="/blog/Measuring-Energy-Usage-on-Jetson-Products/">Measuring Energy Usage on Jetson Products</a></h1>
+<p class="meta">Published on 2022-09-17</p>
+<p>Recently we finalized a project which involved running Machine Learning on a edge device.
+For edge devices we chose jetson nano and jetson tx2.
+Big part of our project was about the power usage on running ML on edge devices.
+To achieve this we needed to measure the power usage of our edge devices.</p>
+<p>Now Jetson boards come with sensors (in there boards) to calculate the energy usage.
+So it's not a &quot;must&quot; requirement use external power measuring devices (as with RPI devices).
+There's a handy tool named <a href="https://developer.nvidia.com/docs/drive/drive-os/latest/linux/sdk/common/topics/util_setup/tegrastatsUtility1.html">tegrastats</a> which can be used to read the power sensor values.
+How tegrastats work is once it's invoked, it prints the sensor readings periodically.
+So it's possible to redirect it's output to a file and later parse it to get the required values.</p>
+<p>Another way of gathering power readings is using one of nice tool built around tegrastats.
+Like <a href="https://github.com/rbonghi/jetson_stats">jtop</a> (jetson_stats)
+It's written in python.
+Jtop looks much like htop but with additional power values.</p>
+<p><img src="/assets/jtop.gif" alt="full-width" /></p>
+<p>It also come with an easy to use script that logs the sensor readings.
+Thus parsing the jtop output is easier compared to tegrastats output.</p>
+
+</article>
+
+</main>
+
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Android Wireless Debugging - Kasun Gamlath</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <script data-goatcounter="https://kasun.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+    <noscript>
+    	<img src="https://MYCODE.goatcounter.com/count?p=/test-noscript">
+    </noscript>
+</head>
+
+<body id="Android-Wireless-Debugging">
+
+<nav>
+<section>
+    <span class="home">
+        <a href="/">Home</a>
+    </span>
+    <span class="links">
+        <a href="/blog/">Blog</a>
+        <a href="/photos/">Photos</a>
+        <a href="/books.html">Book List</a>
+        <!-- <a href="/projects.html">Projects</a> -->
+    </span>
+</section>
+</nav>
+
+<main>
+<article>
+<h1><a href="/blog/Android-Wireless-Debugging/">Android Wireless Debugging</a></h1>
+<p class="meta">Published on 2015-07-24</p>
+<p>Few weeks ago I came to know about this cool feature of wireless ADB (Android Debug Bridge). Following method doesn't need root access to device. If you have done any development in android I'm sure you already have used adb. As the name suggests it let you build a bridge between computer and android device. So you can control your device from the computer. adb has many uses other than debugging. just issue command adb to find out all of them. If you haven't already installed adb you'll have to install adb before continuing. On ubuntu or ubuntu variation command to install adb is &quot;sudo apt-get install android-tools-adb&quot;.</p>
+<p>To do this your computer and device has to be in a same wireless network. if you are not create a wireless access point from computer and from your device, connect to that access point. then connect the device through a usb cable to computer and follow these steps</p>
+<p>1.Make sure adb is running in USB mode on host.</p>
+<p>$ adb usb</p>
+<p>2.Connect to the device over USB. (your devices should be listed as output of following command)</p>
+<p>$ adb devices</p>
+<p>3.Restart host adb in tcpip mode.</p>
+<p>$ adb tcpip 5555</p>
+<p>4.Find out the IP address of the Android device: Settings -&gt; About tablet -&gt; Status -&gt; IP address. Remember the IP address, of the form #.#.#.#.</p>
+<p>5.Connect adb host to device:</p>
+<p>$ adb connect #.#.#.#</p>
+<p>6.Remove USB cable from device, and confirm you can still access device:(if the device is not listed issue the command in 5th step again)</p>
+<p>$ adb devices</p>
+<p>if you got unable to connect error in step 5, try the same connect command few times. If the error is persitent kill the adb server &quot;$ adb kill-server&quot; and start again from step 1. If you still get the error try different port in step 3, for example &quot;$ adb tcpip 5556&quot;. Then you got to change the connect command in step 4 to &quot;$ adb connect #.#.#.#:5556&quot;.</p>
+<p>Happy debugging !!!</p>
+<p><img src="/assets/debugging.gif" alt="" /></p>
+<p>Source :<a href="http://developer.android.com/tools/help/adb.html">http://developer.android.com/tools/help/adb.html</a></p>
+
+</article>
+
+</main>
+
+
+</body>
+</html>
