@@ -7,6 +7,34 @@
 <description>kasun gamlath personal site</description>
 
 <item>
+<title>Local Latex</title>
+<link>https://kasungamlath.com/blog/2025-02-25-Local-Latex/</link>
+<description>
+<![CDATA[
+<p>
+<p>Last term I started using latex to make notes for the my masters course.
+I started with overleaf.
+Overleaf needs a whole screen to show the code and the output pdf comfortably.
+So if I'm to look at the lecture slides, latext code, and output pdf I need a second monitor.</p>
+<p>But since I prefer writing notes while sitting in a caffe, second monitor is not possible.
+So I decided to look into another way to write latex.</p>
+<p>Quick online search resulted in few articles of people using a <code>mactex</code> tex engine (I'm using a macbook) and <code>latex-workshop</code> extension with vscode.
+Following one of those articles I installed the <code>basictex</code> downloaded from <a href="%E2%80%9Chttps://tug.org/mactex/morepackages.html%E2%80%9D"></a></p>
+<p>And installed the latex-workshop extension in vscode.
+But it couldn't compile my tex code.</p>
+<p>Turnedout the <code>basictex</code> doesn't come with <code>latexmk</code> which is required for compiling the tex code.
+To install the <code>latexmk</code>, first need to run <code>sudo tlmgr update --self</code>.
+Then <code>latexmk</code> can be installed with <code>sudo tlmgr install latexmk</code>.</p>
+<p>I also had to install following packages to make use some of the features required for the notes.</p>
+<p><code>sudo tlmgr install blindtext</code></p>
+<p><code>sudo tlmgr install titlesec</code></p>
+
+</p>
+]]>
+</description>
+<pubDate>Tue, 25 Feb 2025 00:00:00 +0000</pubDate>
+</item>
+<item>
 <title>Year 2024</title>
 <link>https://kasungamlath.com/blog/2025-01-05-Year-2024/</link>
 <description>
