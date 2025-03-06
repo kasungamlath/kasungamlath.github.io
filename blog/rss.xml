@@ -7,6 +7,7 @@
 <description>kasun gamlath personal site</description>
 
 <item>
+<<<<<<< HEAD
 <title>My Journey into Budgeting</title>
 <link>https://kasungamlath.com/blog/2025-03-06-My-Journey-into-Budgeting/</link>
 <description>
@@ -51,6 +52,8 @@ and more importantly my expenses are mostly guilt free.
 <pubDate>Thu, 06 Mar 2025 00:00:00 +0000</pubDate>
 </item>
 <item>
+=======
+>>>>>>> ca6912d2c1703f2fd9806c6147f5cec54084f75f
 <title>Local Latex</title>
 <link>https://kasungamlath.com/blog/2025-02-25-Local-Latex/</link>
 <description>
