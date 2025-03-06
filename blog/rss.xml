@@ -7,6 +7,78 @@
 <description>kasun gamlath personal site</description>
 
 <item>
+<title>My Journey into Budgeting</title>
+<link>https://kasungamlath.com/blog/2025-03-06-My-Journey-into-Budgeting/</link>
+<description>
+<![CDATA[
+<p>
+<p><img src="/assets/budget-screenshot.png" alt="full-width" /></p>
+<p>I always get a guilty feeling when I buy a non-necessasity item.
+Non-necessasity item is anything that I could do without.
+A camera would be a perfect example for this - unless you’re a professional photographer.
+While I blame this for the fact me growing up poor, no matter how frugal I am I get this guilty feeling when I’m spending.</p>
+<p>As solution for this I decided to follow budget and track my expenses.
+So when amygdala complains, frontal lobes have numbers to work to back the reasoning.
+For reference amygdala is the part of brain that work with the feelings related stuff while frontal lobe is doing the reasoning.</p>
+<p>So moving on to my solution,
+In order to budget properly I need to see where I stand at any given time.
+For that I need to record all my expenses.
+I can’t automate recording since sometimes I pay with cash. (though that’s pretty rare, it happens).</p>
+<p>So I need a mechanism to easily record expenses as they happen.
+Then a way to double-check my entries periodically.</p>
+<p>To record the expenses I created a Numbers sheet and a Apple shortcut.
+I can invoke the shortcut from the home screen, and enter the amount + description of the expense.
+Then shortcut will enter this data to the numbers' sheet with the current date and default category.
+I could have modified the shortcut to ask the category and skip having a default category.
+But 7/10 times my expense is on the default category.
+So having a default seems a better trade-off</p>
+<p>Then I’ve a script to scan the bank notifications and check those records with the manual entries.
+It logs into a email account and parse all the email receipts related to expenses.
+That reminds me, I’ve a separate email account which my expense receipts get forwarded to.
+While this doesn’t check all the records it can cover more than 90% expenses in my case.</p>
+<p>I’ve being doing this now for more than a year, and it involved lots of minor tweaks.
+For example, I didn’t use a shortcut at the beginning.
+With this system now I have a more understanding on my spending habits,
+and more importantly my expenses are mostly guilt free.
+(Though some of them were quite stupid in hindsight)</p>
+<p>If you'd like to use this method, download the linked numbers file and copy the shortcut to your phone. You'll need to update the path to the numbers file in the shortcut.</p>
+<p><a href="/assets/budget-template-2025-03.numbers">Link numbers sheet (figures are for illustrative purpose only)</a></p>
+<p><a href="https://www.icloud.com/shortcuts/ffd1d57a6d2a456381b95273b2c989c8">Link to Apple shortcut</a></p>
+
+</p>
+]]>
+</description>
+<pubDate>Thu, 06 Mar 2025 00:00:00 +0000</pubDate>
+</item>
+<item>
+<title>Local Latex</title>
+<link>https://kasungamlath.com/blog/2025-02-25-Local-Latex/</link>
+<description>
+<![CDATA[
+<p>
+<p>Last term I started using latex to make notes for the my masters course.
+I started with overleaf.
+Overleaf needs a whole screen to show the code and the output pdf comfortably.
+So if I'm to look at the lecture slides, latext code, and output pdf I need a second monitor.</p>
+<p>But since I prefer writing notes while sitting in a caffe, second monitor is not possible.
+So I decided to look into another way to write latex.</p>
+<p>Quick online search resulted in few articles of people using a <code>mactex</code> tex engine (I'm using a macbook) and <code>latex-workshop</code> extension with vscode.
+Following one of those articles I installed the <code>basictex</code> downloaded from <a href="%E2%80%9Chttps://tug.org/mactex/morepackages.html%E2%80%9D"></a></p>
+<p>And installed the latex-workshop extension in vscode.
+But it couldn't compile my tex code.</p>
+<p>Turnedout the <code>basictex</code> doesn't come with <code>latexmk</code> which is required for compiling the tex code.
+To install the <code>latexmk</code>, first need to run <code>sudo tlmgr update --self</code>.
+Then <code>latexmk</code> can be installed with <code>sudo tlmgr install latexmk</code>.</p>
+<p>I also had to install following packages to make use some of the features required for the notes.</p>
+<p><code>sudo tlmgr install blindtext</code></p>
+<p><code>sudo tlmgr install titlesec</code></p>
+
+</p>
+]]>
+</description>
+<pubDate>Tue, 25 Feb 2025 00:00:00 +0000</pubDate>
+</item>
+<item>
 <title>Year 2024</title>
 <link>https://kasungamlath.com/blog/2025-01-05-Year-2024/</link>
 <description>
