@@ -37,48 +37,47 @@
 <article>
 <h1><a href="/blog/[paper]-bitcoin/">[paper] bitcoin</a></h1>
 <p class="meta">Published on 2020-12-18</p>
-#### Transaction
-How to do a transaction
-1. get the hash of the previous transaction
-2. get the next owner's public key
-3. combine them together
-4. sign the combined hash with own private key
-
-But still the payee can't verify the payer didn't do a double spend.
+<h4>Transaction</h4>
+<p>How to do a transaction</p>
+<ol>
+<li>get the hash of the previous transaction</li>
+<li>get the next owner's public key</li>
+<li>combine them together</li>
+<li>sign the combined hash with own private key</li>
+</ol>
+<p>But still the payee can't verify the payer didn't do a double spend.
 To guaranty there is no double spend all the transactions are made public.
-Then it's required for all the peers to agree on a single history of the order which transactions happened.
-
-#### Timestamp Server
-Get a block of data and hash it, then publish the hash with the current time stamp.
-
-#### proof of work
-To make this timestamp server work peer-to-peer, it requires a proof of work to do a hash.
+Then it's required for all the peers to agree on a single history of the order which transactions happened.</p>
+<h4>Timestamp Server</h4>
+<p>Get a block of data and hash it, then publish the hash with the current time stamp.</p>
+<h4>proof of work</h4>
+<p>To make this timestamp server work peer-to-peer, it requires a proof of work to do a hash.
 This proof-of-work is that each hash should have a certain number of 0s at the beginning.
-How to achieve this is,
-* each block has a digit which can be increased.
-* the node hash the block, check if the hash has the necessary number of 0s.
-* if not increase the digit.
-* it follows this procedure until it gets the necessary number of 0s.
-
-So once the hashing done for a block, to tamper it this proof-of-work has to be repeated.
+How to achieve this is,</p>
+<ul>
+<li>each block has a digit which can be increased.</li>
+<li>the node hash the block, check if the hash has the necessary number of 0s.</li>
+<li>if not increase the digit.</li>
+<li>it follows this procedure until it gets the necessary number of 0s.</li>
+</ul>
+<p>So once the hashing done for a block, to tamper it this proof-of-work has to be repeated.
 And as the new blocks are added to the chain, it gets harder to tamper old blocks (because it will require to change the hash of all the blocks after that tampered block).
 This way the longest chain of blocks represent the majority vote.
-To compensate for increasing hardware power, and varying interest in running a node the difficulty of the proof-of-work is changed based on average number of blocks per hour.
-
-#### Network
-1) New transactions are broadcast to all nodes.
-2) Each node collects new transactions into a block.  
-3) Each node works on finding a difficult proof-of-work for its block.
-4) When a node finds a proof-of-work, it broadcasts the block to all nodes.
-5) Nodes accept the block only if all transactions in it are valid and not already spent.
-6) Nodes express their acceptance of the block by working on creating the next block in the 
-chain, using the hash of the accepted block as the previous hash.
-
-#### incentive
-will come from mining new coins and doing transactions.
-
-#### reclaiming disk space
-transactions are hashed in a merkle tree, only root includes the blocks hash.
+To compensate for increasing hardware power, and varying interest in running a node the difficulty of the proof-of-work is changed based on average number of blocks per hour.</p>
+<h4>Network</h4>
+<ol>
+<li>New transactions are broadcast to all nodes.</li>
+<li>Each node collects new transactions into a block.</li>
+<li>Each node works on finding a difficult proof-of-work for its block.</li>
+<li>When a node finds a proof-of-work, it broadcasts the block to all nodes.</li>
+<li>Nodes accept the block only if all transactions in it are valid and not already spent.</li>
+<li>Nodes express their acceptance of the block by working on creating the next block in the
+chain, using the hash of the accepted block as the previous hash.</li>
+</ol>
+<h4>incentive</h4>
+<p>will come from mining new coins and doing transactions.</p>
+<h4>reclaiming disk space</h4>
+<p>transactions are hashed in a merkle tree, only root includes the blocks hash.</p>
 
 </article>
 

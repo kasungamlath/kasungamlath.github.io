@@ -37,45 +37,36 @@
 <article>
 <h1><a href="/blog/Detecting-luminance-level-of-a-room-using-CCTV-camera-feed/">Detecting luminance level of a room using CCTV camera feed</a></h1>
 <p class="meta">Published on 2020-03-25</p>
-**NOTE :Work in Progress**
-
-Recently I started working on a new research project.
+<p><strong>NOTE :Work in Progress</strong></p>
+<p>Recently I started working on a new research project.
 Goal of this project is to find a relationship between luminance value and RGB value.
-The application of the project is to find the luminance level in a in a small room using CCTV camera feed and adjust it to a optimum level.
-
-Bellow is a outline of the plan,
-1. Find the background part of the scene.
-2. Segment the image.
-3. Find out suitable segments to keep a pixel value -> illuminance level mapping.
-4. Collect illuminance level(lux value)+images for period of time for above found out patches.
-5. Analize the relationship between the lux values and pixel values.
-6. Train a model using pixel values annotated with lux values to get lux value for new pixel values.
-
-
-### Find the background part of the scene
-To find the background part, used the [opencv implementation of MOG2](https://docs.opencv.org/master/d1/dc5/tutorial_background_subtraction.html) method.
+The application of the project is to find the luminance level in a in a small room using CCTV camera feed and adjust it to a optimum level.</p>
+<p>Bellow is a outline of the plan,</p>
+<ol>
+<li>Find the background part of the scene.</li>
+<li>Segment the image.</li>
+<li>Find out suitable segments to keep a pixel value -&gt; illuminance level mapping.</li>
+<li>Collect illuminance level(lux value)+images for period of time for above found out patches.</li>
+<li>Analize the relationship between the lux values and pixel values.</li>
+<li>Train a model using pixel values annotated with lux values to get lux value for new pixel values.</li>
+</ol>
+<h3>Find the background part of the scene</h3>
+<p>To find the background part, used the <a href="https://docs.opencv.org/master/d1/dc5/tutorial_background_subtraction.html">opencv implementation of MOG2</a> method.
 This implementation is focused on finding the foreground using a sequece of images.
 But it can be easily modified to get the background.
-Simply calculating the `NOT` of the foreground mask got the background mask.
-
-### Segment the image
-In this case it was possible to leverage the fact that the target envirenment is known beforehand. 
+Simply calculating the <code>NOT</code> of the foreground mask got the background mask.</p>
+<h3>Segment the image</h3>
+<p>In this case it was possible to leverage the fact that the target envirenment is known beforehand.
 So it's possible to pick ceratain colors of the background objects.
-Then we convert the rgb image to hsv color space and segment the image based on above picked colors.
-
-### Find out suitable segments to keep a pixel value -> illuminance level mapping.
-Using the segmented and filtered image, manually picked a regions of interest to calculate the pixel values.
-
-### Collect illuminance level(lux value)+images for period of time for above found out patches.
-At this phase placed lux meters on the previosly picked regions of interest and collect images from the CCTV camera.
-
-### Analize the relationship between the lux values and pixel values.
-Here calculate the pixel values of captured images and compare them against the collected lux values.
-
-### Train a model using pixel values annotated with lux values to get lux value for new pixel values
-Finally build a model using lux+pixel values collected in previous stages to get the lux values for new pixel values.
-
-
+Then we convert the rgb image to hsv color space and segment the image based on above picked colors.</p>
+<h3>Find out suitable segments to keep a pixel value -&gt; illuminance level mapping.</h3>
+<p>Using the segmented and filtered image, manually picked a regions of interest to calculate the pixel values.</p>
+<h3>Collect illuminance level(lux value)+images for period of time for above found out patches.</h3>
+<p>At this phase placed lux meters on the previosly picked regions of interest and collect images from the CCTV camera.</p>
+<h3>Analize the relationship between the lux values and pixel values.</h3>
+<p>Here calculate the pixel values of captured images and compare them against the collected lux values.</p>
+<h3>Train a model using pixel values annotated with lux values to get lux value for new pixel values</h3>
+<p>Finally build a model using lux+pixel values collected in previous stages to get the lux values for new pixel values.</p>
 
 </article>
 
