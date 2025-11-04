@@ -37,104 +37,143 @@
 <article>
 <h1><a href="/blog/Smart-AC-Part1/">Smart AC Part1</a></h1>
 <p class="meta">Published on 2020-06-15</p>
-<p>Imagine you have a Air Conditioner unit that you don't have to adjust.
+Imagine you have a Air Conditioner unit that you don't have to adjust.
 You don't need to turn it on or off.
 No need to change the mode or adjust the temperature.
 It just works.
-It predicts your schedule, analyse the current situation and activates the optimum settings.</p>
-<p>I was thinking about making one since I tried to make a IR remote to control and RF device. You can read about it from <a href="https://kasungamlath.com/blog/Raspberry-Pi-Universal-Remote/">here</a>.</p>
-<p>To give some context,
+It predicts your schedule, analyse the current situation and activates the optimum settings.
+
+I was thinking about making one since I tried to make a IR remote to control and RF device. You can read about it from [here](https://kasungamlath.com/blog/Raspberry-Pi-Universal-Remote/).
+
+To give some context,
 In my room I have a fairly common HITACHI Air Conditioner unit.
 It has a IR interface.
 I also have a Raspberry Pi device at home.
-And 2 sets of IR receiver + IR emitter units from an early failed experiment.</p>
-<p>So I made an high level plan.</p>
-<ol>
-<li>Make a programmable interface to control the AC.</li>
-<li>Make a smart system to decide the optimum settings for the room.</li>
-<li>Integrate both and enjoy a smart AC.</li>
-</ol>
-<p>And set on to work.</p>
-<p>First I configured the raspberry pi device and plugged in the IR receiver and IR emitter in to 2 GPIO pins.
-Then started up the <a href="http://abyz.me.uk/rpi/pigpio/piscope.html">PISCOPE</a>(It let you analyse the voltage changes on GPIO pins).
+And 2 sets of IR receiver + IR emitter units from an early failed experiment.
+
+So I made an high level plan.
+1. Make a programmable interface to control the AC.
+2. Make a smart system to decide the optimum settings for the room.
+3. Integrate both and enjoy a smart AC.
+
+And set on to work.
+
+First I configured the raspberry pi device and plugged in the IR receiver and IR emitter in to 2 GPIO pins.
+Then started up the [PISCOPE](http://abyz.me.uk/rpi/pigpio/piscope.html)(It let you analyse the voltage changes on GPIO pins).
 Once the set up is in place, pointed the AC remote to raspberry pi conneccted IR receiver plugged in to raspberry pi and pushed few buttons.
-As expected PISCOPE showed the changes in the voltage for corresponding GPIO pin.</p>
-<p>I'll need to record the original remote signals (from AC remote controller) in order to play them back via raspberry pi connected IR emitter.
-So looked up on internet for a way to decode the IR signals.</p>
-<p>Almost all the articles I found uses LIRC module to record and playback IR signals.
+As expected PISCOPE showed the changes in the voltage for corresponding GPIO pin.
+
+I'll need to record the original remote signals (from AC remote controller) in order to play them back via raspberry pi connected IR emitter.
+So looked up on internet for a way to decode the IR signals.
+
+Almost all the articles I found uses LIRC module to record and playback IR signals.
 So I configured the LIRC module in raspberry pi device and tried again.
-LIRC comes with multiple tools.</p>
-<ul>
-<li>mode2 - shows up the time which corresponds to 1s and 0s of the recieved signal.</li>
-<li>irrecode - recode the receiving IR signal</li>
-<li>irsend - playback a received IR signal</li>
-</ul>
-<p>The mode2 worked as expected but I couldn't get the irrecode to work.
-Most probably because they changed the lirc kernel module in the latest kernel and tools are not caught up with it yet.</p>
-<p>I tried to make it work trying various solutions listed on various articles with no luck.</p>
-<p>OK.
-Time for a change in the attack.</p>
-<p>Since the PISCOPE tool I was using is capable of showing up the signal,
-and it comes with a library called pigpio I should be able to leverage that and manually recode the signal right?</p>
-<p>So I started going through the documentation of pigpio. (by now I had some experience in using the library because I already used it to <a href="https://kasungamlath.com/blog/Adjusting-LED-brightnes-with-PWM/">control a LED brightness</a>.
+LIRC comes with multiple tools.
+* mode2 - shows up the time which corresponds to 1s and 0s of the recieved signal.
+* irrecode - recode the receiving IR signal
+* irsend - playback a received IR signal
+
+The mode2 worked as expected but I couldn't get the irrecode to work.
+Most probably because they changed the lirc kernel module in the latest kernel and tools are not caught up with it yet.
+
+I tried to make it work trying various solutions listed on various articles with no luck.
+
+OK.
+Time for a change in the attack.
+
+Since the PISCOPE tool I was using is capable of showing up the signal,
+and it comes with a library called pigpio I should be able to leverage that and manually recode the signal right?
+
+So I started going through the documentation of pigpio. (by now I had some experience in using the library because I already used it to [control a LED brightness](https://kasungamlath.com/blog/Adjusting-LED-brightnes-with-PWM/).
 As it happens, in the examples sections it already had a script to record and playback IR signals.
-So while thanking the person who wrote that library plus the script, I downloaded the script and tried on my raspberry pi.</p>
-<p>It worked!!!</p>
-<p>After a while I was able to record the signals from AC remote and play them back to AC unit.
-Most of the buttons are mapped to a static signal.</p>
-<p>But in the case up and down buttons, they seem to be not static.
+So while thanking the person who wrote that library plus the script, I downloaded the script and tried on my raspberry pi.
+
+It worked!!!
+
+After a while I was able to record the signals from AC remote and play them back to AC unit.
+Most of the buttons are mapped to a static signal.
+
+But in the case up and down buttons, they seem to be not static.
 Meaning if you press the up button twice, the resulting signals are not the same.
 It seems they carry the unit I'm trying to set.
-For example,
-if I'm increasing the temperature from 25 to 26 by pressing the up button,
-it results a signal which contains the number 26.</p>
-<p>This is the signal to turn the AC unit on.
+For example, 
+if I'm increasing the temperature from 25 to 26 by pressing the up button, 
+it results a signal which contains the number 26.
+
+This is the signal to turn the AC unit on.
 The numbers in the signal represent the time(in microseconds) which the volt level stayed same.
 For example in this case, it stayed down for 3370 microseconds then up for 1650 microseconds then again 439 microseconds in down state.
-(The default volt level is up once after you plugged in the IR receiver).</p>
-<pre><code>3370, 1650, 439, 1262, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 1262, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 1262, 439, 413, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 413, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 1262, 439, 1262, 439, 413, 439, 413, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 413, 439, 413, 439, 1262, 439, 1262, 439, 413, 439, 413, 439, 413, 439, 1262, 439, 413, 439, 413, 439, 1262, 439, 413, 439, 413, 439, 1262, 439, 1262, 439, 413, 439, 1262, 439, 1262, 439, 413, 439, 1262, 439, 1262, 439, 413, 439, 1262, 439, 1262, 439, 413, 439, 413, 439, 1262, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 1262, 439, 1262, 439, 413, 439, 1262, 439, 1262, 439, 1262, 439, 413, 439, 413, 439, 413, 439, 1262, 439, 413, 439, 1262, 439, 1262, 439, 413, 439, 1262, 439, 1262, 439, 1262, 439, 413, 439, 1262, 439, 413, 439, 413, 439, 1262, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 413, 439, 413, 439, 1262, 439, 1262, 439, 413, 439, 413, 439, 413, 439, 413, 439, 1262, 439, 1262, 439, 413, 439, 413, 439, 1262, 439, 1262, 439, 1262, 439, 413, 439, 413, 439, 413, 439, 1262, 439, 413, 439, 1262, 439, 1262, 439, 413, 439, 1262, 439, 1262, 439, 1262, 439, 413, 439, 1262, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439
-</code></pre>
-<p>Signal to change the mode to humidity.</p>
-<pre><code>3370, 1650, 439, 1262, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 1262, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 1262, 439, 413, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 413, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 1262, 439, 1262, 439, 413, 439, 413, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 413, 439, 413, 439, 1262, 439, 1262, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 1262, 439, 1262, 439, 413, 439, 413, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 413, 439, 413, 439, 1262, 439, 1262, 439, 413, 439, 1262, 439, 1262, 439, 413, 439, 413, 439, 1262, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 1262, 439, 1262, 439, 413, 439, 1262, 439, 1262, 439, 1262, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 1262, 439, 1262, 439, 413, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 413, 439, 413, 439, 1262, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 413, 439, 1262, 439, 413, 439, 1262, 439, 413, 439, 413, 439, 413, 439, 413, 439, 1262, 439, 413, 439, 1262, 439, 413, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 413, 439, 413, 439, 413, 439, 1262, 439, 413, 439, 1262, 439, 1262, 439, 413, 439, 1262, 439, 1262, 439, 1262, 439, 413, 439, 1262, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439
-</code></pre>
-<p>As you can see they are similar in most parts.
+(The default volt level is up once after you plugged in the IR receiver).
+
+```
+3370, 1650, 439, 1262, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 1262, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 1262, 439, 413, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 413, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 1262, 439, 1262, 439, 413, 439, 413, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 413, 439, 413, 439, 1262, 439, 1262, 439, 413, 439, 413, 439, 413, 439, 1262, 439, 413, 439, 413, 439, 1262, 439, 413, 439, 413, 439, 1262, 439, 1262, 439, 413, 439, 1262, 439, 1262, 439, 413, 439, 1262, 439, 1262, 439, 413, 439, 1262, 439, 1262, 439, 413, 439, 413, 439, 1262, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 1262, 439, 1262, 439, 413, 439, 1262, 439, 1262, 439, 1262, 439, 413, 439, 413, 439, 413, 439, 1262, 439, 413, 439, 1262, 439, 1262, 439, 413, 439, 1262, 439, 1262, 439, 1262, 439, 413, 439, 1262, 439, 413, 439, 413, 439, 1262, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 413, 439, 413, 439, 1262, 439, 1262, 439, 413, 439, 413, 439, 413, 439, 413, 439, 1262, 439, 1262, 439, 413, 439, 413, 439, 1262, 439, 1262, 439, 1262, 439, 413, 439, 413, 439, 413, 439, 1262, 439, 413, 439, 1262, 439, 1262, 439, 413, 439, 1262, 439, 1262, 439, 1262, 439, 413, 439, 1262, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439
+```
+
+
+Signal to change the mode to humidity.
+
+```
+3370, 1650, 439, 1262, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 1262, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 1262, 439, 413, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 413, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 1262, 439, 1262, 439, 413, 439, 413, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 413, 439, 413, 439, 1262, 439, 1262, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 1262, 439, 1262, 439, 413, 439, 413, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 413, 439, 413, 439, 1262, 439, 1262, 439, 413, 439, 1262, 439, 1262, 439, 413, 439, 413, 439, 1262, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 1262, 439, 1262, 439, 413, 439, 1262, 439, 1262, 439, 1262, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 1262, 439, 1262, 439, 413, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 413, 439, 413, 439, 1262, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 413, 439, 1262, 439, 413, 439, 1262, 439, 413, 439, 413, 439, 413, 439, 413, 439, 1262, 439, 413, 439, 1262, 439, 413, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 413, 439, 413, 439, 413, 439, 1262, 439, 413, 439, 1262, 439, 1262, 439, 413, 439, 1262, 439, 1262, 439, 1262, 439, 413, 439, 1262, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 413, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439, 1262, 439
+```
+
+
+As you can see they are similar in most parts.
 They start with 3370, 1650 segment which you don't see within the signal after that.
-And contain only 3 distinct time values(439,1262,413) apart from start segment.</p>
-<p>By this time I was fairly certain somebody have already decoded this code.
+And contain only 3 distinct time values(439,1262,413) apart from start segment.
+
+By this time I was fairly certain somebody have already decoded this code.
 So I set out to find something on it on the internet.
-I found this <a href="https://perhof.wordpress.com/2015/03/29/reverse-engineering-hitachi-air-conditioner-infrared-remote-commands/">article</a>.</p>
-<p>According to it,</p>
-<ul>
-<li>3370, 1650, 439 is the header.</li>
-<li>1262, 439 segment is binary one.</li>
-<li>413, 439 segment is binary zero.</li>
-</ul>
-<p>Note :These numbers have some error margin.
+I found this [article](https://perhof.wordpress.com/2015/03/29/reverse-engineering-hitachi-air-conditioner-infrared-remote-commands/).
+
+According to it,
+* 3370, 1650, 439 is the header.
+* 1262, 439 segment is binary one.
+* 413, 439 segment is binary zero.
+
+Note :These numbers have some error margin. 
 Since they are in microsecond level when measured they are not in these precious numbers.
 They changed bit up and down each time.
 But it doesn't matter for the communication.
-IR receiver in AC unit is bit forging in this regard.</p>
-<p>Article also confirmed my hunch that up and down buttons sends up the number within the signal.
+IR receiver in AC unit is bit forging in this regard.
+
+Article also confirmed my hunch that up and down buttons sends up the number within the signal.
 It contains in the byte 14 and 15.
 Byte 14 is the number with least significant bit first.
 Byte 15 is the inverse of the byte 14.
-Byte 15 might be acting as a parity byte for the byte 14.</p>
-<p>To confirm if it's the same as in my case,
-I decoded the signal to binary representation.</p>
-<p>Signal representation for 27c.</p>
-<pre><code>3378, 1643, 442, 1243, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 1243, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 1243, 442, 397, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 397, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 1243, 442, 1243, 442, 397, 442, 397, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 397, 442, 397, 442, 1243, 442, 1243, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 1243, 442, 1243, 442, 397, 442, 397, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 397, 442, 397, 442, 1243, 442, 1243, 442, 397, 442, 397, 442, 397, 442, 1243, 442, 397, 442, 397, 442, 397, 442, 1243, 442, 397, 442, 1243, 442, 1243, 442, 397, 442, 1243, 442, 1243, 442, 1243, 442, 397, 442, 1243, 442, 397, 442, 397, 442, 1243, 442, 1243, 442, 397, 442, 1243, 442, 1243, 442, 397, 442, 1243, 442, 1243, 442, 397, 442, 397, 442, 1243, 442, 397, 442, 397, 442, 1243, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 397, 442, 1243, 442, 397, 442, 1243, 442, 397, 442, 397, 442, 397, 442, 397, 442, 1243, 442, 397, 442, 1243, 442, 397, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 397, 442, 397, 442, 397, 442, 1243, 442, 397, 442, 1243, 442, 1243, 442, 397, 442, 1243, 442, 1243, 442, 1243, 442, 397, 442, 1243, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442
-</code></pre>
-<p>Binary signal</p>
-<pre><code>[1, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 1, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1, 0], [1, 1, 1, 1, 1, 1, 0, 1], [1, 1, 1, 1, 1, 1, 1, 1], [0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 1, 1, 0, 0, 1, 1], [1, 1, 0, 0, 1, 1, 0, 0], [0, 0, 0, 1, 1, 0, 0, 1], [1, 1, 1, 0, 0, 1, 1, 0], [0, 0, 1, 0, 0, 0, 1, 0], [1, 1, 0, 1, 1, 1, 0, 1], [0, 0, 1, 1, 0, 1, 1, 0], [1, 1, 0, 0, 1, 0, 0, 1], [0, 0, 0, 0, 0, 0, 0, 0], [1, 1, 1, 1, 1, 1, 1, 1], [0, 0, 0, 0, 0, 0, 0, 0], [1, 1, 1, 1, 1, 1, 1, 1], [0, 0, 0, 0, 0, 0, 0, 0], [1, 1, 1, 1, 1, 1, 1, 1], [0, 0, 0, 0, 0, 0, 0, 0], [1, 1, 1, 1, 1, 1, 1, 1], [0, 0, 0, 0, 0, 0, 0, 0], [1, 1, 1, 1, 1, 1, 1, 1], [1, 0, 1, 0, 1, 0, 0, 0], [0, 1, 0, 1, 0, 1, 1, 1], [1, 0, 0, 0, 1, 0, 1, 1], [0, 1, 1, 1, 0, 1, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0], [1, 1, 1, 1, 1, 1, 1, 1], [0, 0, 0, 0, 0, 0, 0, 0], [1, 1, 1, 1, 1, 1, 1, 1]
-</code></pre>
-<p>Byte 14 and 15</p>
-<pre><code>[0,0,1,1,0,1,1,0],[1,1,0,0,1,0,0,1]
-</code></pre>
-<p>So the byte 14 is really the number 27 with least significant bit first.
-And byte 15 is the inverse of byte 14.</p>
-<p>And that's it for the mystery of the AC remote.</p>
-<p>So now I can generate and transmit all the necessary signal to control the basics of AC unit using only the raspberry pi unit.</p>
-<p>Next part will be combining all this and building a programmable interface to emit these signals...</p>
+Byte 15 might be acting as a parity byte for the byte 14.
+
+To confirm if it's the same as in my case,
+I decoded the signal to binary representation.
+
+Signal representation for 27c.
+
+```
+3378, 1643, 442, 1243, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 1243, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 1243, 442, 397, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 397, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 1243, 442, 1243, 442, 397, 442, 397, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 397, 442, 397, 442, 1243, 442, 1243, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 1243, 442, 1243, 442, 397, 442, 397, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 397, 442, 397, 442, 1243, 442, 1243, 442, 397, 442, 397, 442, 397, 442, 1243, 442, 397, 442, 397, 442, 397, 442, 1243, 442, 397, 442, 1243, 442, 1243, 442, 397, 442, 1243, 442, 1243, 442, 1243, 442, 397, 442, 1243, 442, 397, 442, 397, 442, 1243, 442, 1243, 442, 397, 442, 1243, 442, 1243, 442, 397, 442, 1243, 442, 1243, 442, 397, 442, 397, 442, 1243, 442, 397, 442, 397, 442, 1243, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 397, 442, 1243, 442, 397, 442, 1243, 442, 397, 442, 397, 442, 397, 442, 397, 442, 1243, 442, 397, 442, 1243, 442, 397, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 397, 442, 397, 442, 397, 442, 1243, 442, 397, 442, 1243, 442, 1243, 442, 397, 442, 1243, 442, 1243, 442, 1243, 442, 397, 442, 1243, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 397, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442, 1243, 442
+```
+
+Binary signal
+
+```
+[1, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 1, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1, 0], [1, 1, 1, 1, 1, 1, 0, 1], [1, 1, 1, 1, 1, 1, 1, 1], [0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 1, 1, 0, 0, 1, 1], [1, 1, 0, 0, 1, 1, 0, 0], [0, 0, 0, 1, 1, 0, 0, 1], [1, 1, 1, 0, 0, 1, 1, 0], [0, 0, 1, 0, 0, 0, 1, 0], [1, 1, 0, 1, 1, 1, 0, 1], [0, 0, 1, 1, 0, 1, 1, 0], [1, 1, 0, 0, 1, 0, 0, 1], [0, 0, 0, 0, 0, 0, 0, 0], [1, 1, 1, 1, 1, 1, 1, 1], [0, 0, 0, 0, 0, 0, 0, 0], [1, 1, 1, 1, 1, 1, 1, 1], [0, 0, 0, 0, 0, 0, 0, 0], [1, 1, 1, 1, 1, 1, 1, 1], [0, 0, 0, 0, 0, 0, 0, 0], [1, 1, 1, 1, 1, 1, 1, 1], [0, 0, 0, 0, 0, 0, 0, 0], [1, 1, 1, 1, 1, 1, 1, 1], [1, 0, 1, 0, 1, 0, 0, 0], [0, 1, 0, 1, 0, 1, 1, 1], [1, 0, 0, 0, 1, 0, 1, 1], [0, 1, 1, 1, 0, 1, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0], [1, 1, 1, 1, 1, 1, 1, 1], [0, 0, 0, 0, 0, 0, 0, 0], [1, 1, 1, 1, 1, 1, 1, 1]
+```
+
+
+Byte 14 and 15
+
+```
+[0,0,1,1,0,1,1,0],[1,1,0,0,1,0,0,1]
+```
+
+So the byte 14 is really the number 27 with least significant bit first.
+And byte 15 is the inverse of byte 14.
+
+And that's it for the mystery of the AC remote.
+
+So now I can generate and transmit all the necessary signal to control the basics of AC unit using only the raspberry pi unit.
+
+Next part will be combining all this and building a programmable interface to emit these signals...
+
+
 
 </article>
 
